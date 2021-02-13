@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../fast_digital_servo.srcs/sources_1/ip/dds_PG_pw24/sim/dds_PG_pw24.vhd" \
+
+nosort

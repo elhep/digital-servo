@@ -1,0 +1,199 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z020clg484-2",
+      "name": "main",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2"
+    },
+    "design_tree": {
+      "processing_system7_0": "",
+      "SuperLaserLand_0": ""
+    },
+    "interface_ports": {
+      "DDR": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0"
+      }
+    },
+    "components": {
+      "processing_system7_0": {
+        "vlnv": "xilinx.com:ip:processing_system7:5.5",
+        "xci_name": "main_processing_system7_0_0"
+      },
+      "SuperLaserLand_0": {
+        "vlnv": "xilinx.com:module_ref:SuperLaserLand:1.0",
+        "xci_name": "main_SuperLaserLand_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SuperLaserLand",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk1_in": {
+            "direction": "I"
+          },
+          "DIN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "LED_G": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "LED_R": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "configurationNR": {
+            "direction": "I",
+            "left": "12287",
+            "right": "0"
+          },
+          "LTC2195_SCS": {
+            "direction": "O"
+          },
+          "LTC2195_SCK": {
+            "direction": "O"
+          },
+          "LTC2195_SDI": {
+            "direction": "O"
+          },
+          "LTC2195_SDO": {
+            "direction": "I"
+          },
+          "LTC2195_ENC_P": {
+            "direction": "O"
+          },
+          "LTC2195_ENC_N": {
+            "direction": "O"
+          },
+          "LTC2195_FR_P": {
+            "direction": "I"
+          },
+          "LTC2195_FR_N": {
+            "direction": "I"
+          },
+          "LTC2195_DCO_P": {
+            "direction": "I"
+          },
+          "LTC2195_DCO_N": {
+            "direction": "I"
+          },
+          "LTC2195_D0_P": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "LTC2195_D0_N": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "LTC2195_D1_P": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "LTC2195_D1_N": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "AD9783_RST": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "AD9783_SCS": {
+            "direction": "O"
+          },
+          "AD9783_SCK": {
+            "direction": "O"
+          },
+          "AD9783_SDO": {
+            "direction": "I"
+          },
+          "AD9783_SDI": {
+            "direction": "O"
+          },
+          "AD9783_CLK_P": {
+            "type": "clk",
+            "direction": "O"
+          },
+          "AD9783_CLK_N": {
+            "type": "clk",
+            "direction": "O"
+          },
+          "AD9783_DCI_P": {
+            "direction": "O"
+          },
+          "AD9783_DCI_N": {
+            "direction": "O"
+          },
+          "AD9783_D_P": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "AD9783_D_N": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "AD5791_SCS": {
+            "direction": "O"
+          },
+          "AD5791_SCK": {
+            "direction": "O"
+          },
+          "AD5791_SDI": {
+            "direction": "O"
+          },
+          "AD5791_SDO": {
+            "direction": "I"
+          },
+          "AD5791_LDAC": {
+            "direction": "O"
+          },
+          "AD5791_CLR": {
+            "direction": "O"
+          },
+          "AD5791_RST": {
+            "type": "rst",
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "processing_system7_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "processing_system7_0/DDR"
+        ]
+      }
+    },
+    "nets": {
+      "processing_system7_0_FCLK_CLK0": {
+        "ports": [
+          "processing_system7_0/FCLK_CLK0",
+          "processing_system7_0/M_AXI_GP0_ACLK"
+        ]
+      }
+    },
+    "addressing": {
+      "/processing_system7_0": {
+        "address_spaces": {
+          "Data": {
+            "range": "4G",
+            "width": "32"
+          }
+        }
+      }
+    }
+  }
+}
