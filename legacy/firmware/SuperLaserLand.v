@@ -108,13 +108,13 @@ module SuperLaserLand(
 	// output wire [13:0] AD9117_D_N
 	output wire [1:0] DAC_AFE_nPD,
 
-	output wire			 AD5791_SCS,
-	output wire			 AD5791_SCK,
-	output wire			 AD5791_SDI,
-	input  wire			 AD5791_SDO,
-	output wire			 AD5791_LDAC,
-	output wire			 AD5791_CLR,
-	output wire			 AD5791_RST
+	output wire			 AD5722_SCS,
+	output wire			 AD5722_SCK,
+	output wire			 AD5722_SDI,
+	input  wire			 AD5722_SDO,
+	output wire			 AD5722_LDAC,
+	output wire			 AD5722_CLR,
+	output wire			 AD5722_BIN
 );
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -479,17 +479,17 @@ assign DAC_AFE_nPD = 2'b11;
 // );
 // `endif // CONFIG_TESTHARDWARE
 
-AD5791 AD5791_inst(
+AD5722 AD5722_inst(
 	.clk_in(clk1),
 	.rst_in(rst),
 	.DAC_in(DACin[2][SIGNAL_SIZE-1:SIGNAL_SIZE-20]),
-	.ldac_out(AD5791_LDAC),
-	.clr_out(AD5791_CLR),
-	.rst_out(AD5791_RST),
-	.spi_scs_out(AD5791_SCS),
-	.spi_sck_out(AD5791_SCK),
-	.spi_sdo_out(AD5791_SDI),
-	.spi_sdi_in(AD5791_SDO)
+	.ldac_out(AD5722_LDAC),
+	.clr_out(AD5722_CLR),
+	.bin_out(AD5722_BIN),
+	.spi_scs_out(AD5722_SCS),
+	.spi_sck_out(AD5722_SCK),
+	.spi_sdo_out(AD5722_SDI),
+	.spi_sdi_in(AD5722_SDO)
 );
 
 ///////////////////////////////////////////////////////////////////////////////
