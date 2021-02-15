@@ -22,7 +22,8 @@ module SPI(
 	output reg						 				spi_scs_out,
 	output reg						 				spi_sck_out,
 	output reg						 				spi_sdo_out,
-	input  wire	[N_SDI-1:0]		 				spi_sdi_in
+	input  wire	[N_SDI-1:0]		 				spi_sdi_in,
+	output reg                                 spi_out_en
 );
 
 // Parameters
@@ -115,18 +116,21 @@ always @(posedge spi_clk or posedge rst_in or posedge trigger_in) begin
 				spi_scs_out <= 1'b1;
 				spi_sck_out <= SPI_POLARITY;
 				spi_sdo_out <= 1'b1;
+                spi_out_en <= 1'b0;
 			end
 			TRIG: begin
 				counter_f <= TRANSFER_SIZE;
 			end
 			SPI1: begin
 				spi_scs_out <= 1'b0;
+				spi_out_en <= 1'b0;
 			end
 			SPI2: begin
 				spi_sck_out <= ~SPI_POLARITY;
 				spi_sdo_out <= data_out[TRANSFER_SIZE-1];
 			end
 			SPI3: begin
+                spi_out_en <= 1'b1;
 				if (N_SDI == 1)
 					data_out <= {data_out[TRANSFER_SIZE-2:0], spi_sdi_in};
 				else if (N_SDI == 3)
@@ -135,6 +139,7 @@ always @(posedge spi_clk or posedge rst_in or posedge trigger_in) begin
 									 data_out[0*TRANSFER_SIZE+:TRANSFER_SIZE-1], spi_sdi_in[0]};
 				counter_f <= counter_f - 12'b1;
 				spi_sck_out <= SPI_POLARITY;
+                spi_out_en <= 1'b0;
 			end
 			SPI4: begin
 				spi_scs_out <= 1'b1;

@@ -271,6 +271,18 @@ endgenerate
 reg			spi_trigger;
 reg  [15:0]	spi_data;
 wire			spi_ready;
+wire    spi_sdi;
+wire    spi_sdo;
+wire spi_out_en;
+
+IOBUF #(
+      .IOSTANDARD("LVCMOS18") // Specify the I/O standard
+   ) IOBUF_inst (
+      .O(spi_sdo),     // Buffer output
+      .IO(spi_sdio),   // Buffer inout port (connect directly to top-level port)
+      .I(spi_sdi),     // Buffer input
+      .T(spi_out_en)      // 3-state enable input, high=input, low=output
+   );
 
 SPI #(
 	.TRANSFER_SIZE(16),
@@ -285,8 +297,9 @@ AD_9117_SPI_inst(
 	.ready_out(spi_ready),
 	.spi_scs_out(spi_scs_out),
 	.spi_sck_out(spi_sck_out),
-	.spi_sdio(spi_sdio),
-	.spi_sdi_in(spi_sdi_in)
+	.spi_sdo_out(spi_sdo),
+	.spi_sdi_in(spi_sdi),
+	.spi_out_en(spi_out_en)
 );
 
 ///////////////////////////////////////////////////////////////////////////////
