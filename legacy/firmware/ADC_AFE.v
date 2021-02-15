@@ -79,6 +79,8 @@ function [2:0] next_state;
 	input						[2:0] gain0;
 	input						[2:0] gain1;
 	input						[1:0] i_power_down;
+	input						[1:0] power_down;
+	input						[1:0] term_state_f;
 	input						i_term0;
 	input						i_term1;
 	
@@ -127,7 +129,7 @@ always @(posedge fsm_clk or posedge rst_in) begin
 		nSHDN1 <= 1'b0;
 	end
 	else begin
-		state_f <= next_state(state_f, counter_f, gain0_in, gain1_in, gain0_f, gain1_f, power_down_f, term_state_f);
+		state_f <= next_state(state_f, counter_f, gain0_in, gain1_in, gain0_f, gain1_f,i_power_down, power_down_f, term_state_f, i_term0, i_term1);
 		case (state_f)
 			IDLE: begin
 				o_gainx10_0 <= 1'b0;

@@ -64,6 +64,14 @@ module SuperLaserLand(
 //	output wire			 AD8251_IN_WR0,
 //	output wire			 AD8251_IN_WR1,
 	
+	input wire  	ADC_AFE_TERM0,
+	input wire  	ADC_AFE_TERM1,
+	input wire  	ADC_AFE_GAINX10_0,
+	input wire  	ADC_AFE_GAINX10_1,
+	input wire 		ADC_AFE_nSHDN0,
+	input wire 		ADC_AFE_nSHDN1,
+
+
 	input wire [12287:0] configurationNR,
 	
 	output wire			 LTC2195_SCS,
@@ -92,14 +100,15 @@ module SuperLaserLand(
 	// input  wire			 AD9117_SDO,
 	// output wire			 AD9117_SDI,
 	inout wire  		 AD9117_SDIO,
-	output wire			 AD9117_CLK_P,
+	// output wire			 AD9117_CLK_P,
 	// output wire			 AD9117_CLK_N,
 	output wire			 AD9117_DCI_P,
 	// output wire			 AD9117_DCI_N,
-	output wire [13:0] AD9117_D_P
+	output wire [13:0] AD9117_D_P,
 	// output wire [13:0] AD9117_D_N
+	output wire [1:0] DAC_AFE_nPD,
 
-,	output wire			 AD5791_SCS,
+	output wire			 AD5791_SCS,
 	output wire			 AD5791_SCK,
 	output wire			 AD5791_SDI,
 	input  wire			 AD5791_SDO,
@@ -442,29 +451,33 @@ AD9117_inst(
 	// .D_out_n(AD9117_D_N)
 );
 
-`ifdef CONFIG_TESTHARDWARE
-AD8251x2 AD8251x2_out(
-	.clk_in(clk1),
-	.rst_in(rst),
-	.gain0_in(2'b10),
-	.gain1_in(2'b10),
-	.A0_out(AD8251_OUT_A0),
-	.A1_out(AD8251_OUT_A1),
-	.WR0_out(AD8251_OUT_WR0),
-	.WR1_out(AD8251_OUT_WR1)
-);
-`else // CONFIG_TESTHARDWARE
-AD8251x2 AD8251x2_out(
-	.clk_in(clk1),
-	.rst_in(rst),
-	.gain0_in(DACconfig[0][131:130]),
-	.gain1_in(DACconfig[1][131:130]),
-	.A0_out(AD8251_OUT_A0),
-	.A1_out(AD8251_OUT_A1),
-	.WR0_out(AD8251_OUT_WR0),
-	.WR1_out(AD8251_OUT_WR1)
-);
-`endif // CONFIG_TESTHARDWARE
+// CONFIG_TESTHARDWARE
+assign DAC_AFE_nPD = 2'b11;
+
+
+// `ifdef CONFIG_TESTHARDWARE
+// AD8251x2 AD8251x2_out(
+// 	.clk_in(clk1),
+// 	.rst_in(rst),
+// 	.gain0_in(2'b10),
+// 	.gain1_in(2'b10),
+// 	.A0_out(AD8251_OUT_A0),
+// 	.A1_out(AD8251_OUT_A1),
+// 	.WR0_out(AD8251_OUT_WR0),
+// 	.WR1_out(AD8251_OUT_WR1)
+// );
+// `else // CONFIG_TESTHARDWARE
+// AD8251x2 AD8251x2_out(
+// 	.clk_in(clk1),
+// 	.rst_in(rst),
+// 	.gain0_in(DACconfig[0][131:130]),
+// 	.gain1_in(DACconfig[1][131:130]),
+// 	.A0_out(AD8251_OUT_A0),
+// 	.A1_out(AD8251_OUT_A1),
+// 	.WR0_out(AD8251_OUT_WR0),
+// 	.WR1_out(AD8251_OUT_WR1)
+// );
+// `endif // CONFIG_TESTHARDWARE
 
 AD5791 AD5791_inst(
 	.clk_in(clk1),
