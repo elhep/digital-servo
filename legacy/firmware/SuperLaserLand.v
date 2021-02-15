@@ -317,26 +317,32 @@ wire signed	[SIGNAL_SIZE-1:0]	ADCout[0:1];		// after the low pass filter
 reg  signed	[SIGNAL_SIZE-1:0]	ADCdiff;				// difference of the two ADCs
 
 `ifdef CONFIG_TESTHARDWARE
-AD8251x2 AD8251x2_in(
+ADC_AFE ADC_AFE_inst(
 	.clk_in(clk1),
 	.rst_in(rst),
 	.gain0_in(2'b00),
 	.gain1_in(2'b00),
-	.A0_out(AD8251_IN_A0),
-	.A1_out(AD8251_IN_A1),
-	.WR0_out(AD8251_IN_WR0),
-	.WR1_out(AD8251_IN_WR1)
+	.i_power_down(2'b01),
+	.o_gainx10_0(ADC_AFE_GAINX10_0),
+	.o_gainx10_1(ADC_AFE_GAINX10_1),
+	.nSHDN0(ADC_AFE_nSHDN0),
+	.nSHDN1(ADC_AFE_nSHDN1),
+	.i_term0(ADC_AFE_TERM0),
+	.i_term1(ADC_AFE_TERM1)
 );
 `else // CONFIG_TESTHARDWARE
-AD8251x2 AD8251x2_in(
+ADC_AFE ADC_AFE_inst(
 	.clk_in(clk1),
 	.rst_in(rst),
 	.gain0_in(2'b11 - ADCconfig[0][129:128]),
 	.gain1_in(2'b11 - ADCconfig[1][129:128]),
-	.A0_out(AD8251_IN_A0),
-	.A1_out(AD8251_IN_A1),
-	.WR0_out(AD8251_IN_WR0),
-	.WR1_out(AD8251_IN_WR1)
+	.i_power_down(2'b01),
+	.o_gainx10_0(ADC_AFE_GAINX10_0),
+	.o_gainx10_1(ADC_AFE_GAINX10_1),
+	.nSHDN0(ADC_AFE_nSHDN0),
+	.nSHDN1(ADC_AFE_nSHDN1),
+	.i_term0(ADC_AFE_TERM0),
+	.i_term1(ADC_AFE_TERM1)
 );
 `endif // CONFIG_TESTHARDWARE
 
