@@ -86,17 +86,18 @@ module SuperLaserLand(
 //	output wire			 AD8251_OUT_WR0,
 //	output wire			 AD8251_OUT_WR1
 	
-,	output wire			 AD9783_RST,
-	output wire			 AD9783_SCS,
-	output wire			 AD9783_SCK,
-	input  wire			 AD9783_SDO,
-	output wire			 AD9783_SDI,
-	output wire			 AD9783_CLK_P,
-	output wire			 AD9783_CLK_N,
-	output wire			 AD9783_DCI_P,
-	output wire			 AD9783_DCI_N,
-	output wire [15:0] AD9783_D_P,
-	output wire [15:0] AD9783_D_N
+,	output wire			 AD9117_RST,
+	output wire			 AD9117_SCS,
+	output wire			 AD9117_SCK,
+	// input  wire			 AD9117_SDO,
+	// output wire			 AD9117_SDI,
+	inout wire  		 AD9117_SDIO,
+	output wire			 AD9117_CLK_P,
+	// output wire			 AD9117_CLK_N,
+	output wire			 AD9117_DCI_P,
+	// output wire			 AD9117_DCI_N,
+	output wire [13:0] AD9117_D_P
+	// output wire [13:0] AD9117_D_N
 
 ,	output wire			 AD5791_SCS,
 	output wire			 AD5791_SCK,
@@ -115,7 +116,7 @@ module SuperLaserLand(
 
 ///////////////////////////////////////////////////////////////////////////////
 // Wires
-wire [15:0] cmd_addr, cmd_data1in, cmd_data2in, cmd_dataout_M25P32_CONFIG, cmd_dataout_AD9783, cmd_dataout_LTC2195_2, cmd_dataout_LTC2195_1, cmd_dataout_LTC2195_0;
+wire [15:0] cmd_addr, cmd_data1in, cmd_data2in, cmd_dataout_M25P32_CONFIG, cmd_dataout_AD9117, cmd_dataout_LTC2195_2, cmd_dataout_LTC2195_1, cmd_dataout_LTC2195_0;
 //wire 			cmd_trig;
 
 wire  [2:0] DOUT;
@@ -131,7 +132,7 @@ wire  [2:0] DOUT;
 //assign cmd_data1in = WireIn01[15:0];
 //assign cmd_data2in = WireIn02[15:0];
 //assign WireOut20 = cmd_dataout_M25P32_CONFIG;
-//assign WireOut21 = cmd_dataout_AD9783;
+//assign WireOut21 = cmd_dataout_AD9117;
 //assign WireOut22 = cmd_dataout_LTC2195_0;
 //assign WireOut23 = cmd_dataout_LTC2195_1;
 //assign WireOut24 = cmd_dataout_LTC2195_2;
@@ -407,31 +408,32 @@ assign DACconfig[2]   = configuration[12287:10240];
 
 wire signed [SIGNAL_SIZE-1:0]	DACin[0:2];
 
-AD9783 #(
+AD9117 #(
 	.SMP_DLY(8'hD)
 )
-AD9783_inst(
+AD9117_inst(
 	.clk_in(clk1),
 	.rst_in(rst),
 	.cmd_trig_in(cmd_trig),
 	.cmd_addr_in(cmd_addr),
 	.cmd_data_in(cmd_data1in),
-	.cmd_data_out(cmd_dataout_AD9783),
-	.rst_out(AD9783_RST),
-	.spi_scs_out(AD9783_SCS),
-	.spi_sck_out(AD9783_SCK),
-	.spi_sdo_out(AD9783_SDI),
-	.spi_sdi_in(AD9783_SDO),
+	.cmd_data_out(cmd_dataout_AD9117),
+	.rst_out(AD9117_RST),
+	.spi_scs_out(AD9117_SCS),
+	.spi_sck_out(AD9117_SCK),
+	.spi_sdio(AD9117_SDIO),
+	// .spi_sdo_out(AD9117_SDI),
+	// .spi_sdi_in(AD9117_SDO),
 //	.DAC0_in(PHASEDETdebug_out[47:32]),
 //	.DAC1_in(PHASEDETdebug_out[63:48]),
 	.DAC0_in(DACin[0][SIGNAL_SIZE-1:SIGNAL_SIZE-16]),
 	.DAC1_in(DACin[1][SIGNAL_SIZE-1:SIGNAL_SIZE-16]),
-	.CLK_out_p(AD9783_CLK_P),
-	.CLK_out_n(AD9783_CLK_N),
-	.DCI_out_p(AD9783_DCI_P),
-	.DCI_out_n(AD9783_DCI_N),
-	.D_out_p(AD9783_D_P),
-	.D_out_n(AD9783_D_N)
+	// .CLK_out_p(AD9117_CLK_P),
+	// .CLK_out_n(AD9117_CLK_N),
+	.DCI_out(AD9117_DCI_P),
+	// .DCI_out_n(AD9117_DCI_N),
+	.D_out(AD9117_D_P)
+	// .D_out_n(AD9117_D_N)
 );
 
 `ifdef CONFIG_TESTHARDWARE
