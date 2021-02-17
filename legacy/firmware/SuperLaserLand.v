@@ -66,10 +66,10 @@ module SuperLaserLand(
 	
 	input wire  	ADC_AFE_TERM0,
 	input wire  	ADC_AFE_TERM1,
-	input wire  	ADC_AFE_GAINX10_0,
-	input wire  	ADC_AFE_GAINX10_1,
-	input wire 		ADC_AFE_nSHDN0,
-	input wire 		ADC_AFE_nSHDN1,
+	output wire  	ADC_AFE_GAINX10_0,
+	output wire  	ADC_AFE_GAINX10_1,
+	output wire 		ADC_AFE_nSHDN0,
+	output wire 		ADC_AFE_nSHDN1,
 
 
 	input wire [12287:0] configurationNR,
