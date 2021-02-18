@@ -87,14 +87,23 @@ module SuperLaserLand(
 	input  wire  [3:0] LTC2195_D0_P,
 	input  wire  [3:0] LTC2195_D0_N,
 	input  wire  [3:0] LTC2195_D1_P,
-	input  wire  [3:0] LTC2195_D1_N
+	input  wire  [3:0] LTC2195_D1_N,
 
+    output wire AD7266_CLK,
+    output wire AD7266_CSn,
+    output wire AD7266_SGL,
+    output wire AD7266_RANGE,
+    inout wire AD7266_SDIO_N,
+    inout wire AD7266_SDIO_P,
+    output wire AD7266_A0,
+    output wire AD7266_A1,
+    output wire AD7266_A2,
 //,	output wire			 AD8251_OUT_A0,
 //	output wire			 AD8251_OUT_A1,
 //	output wire			 AD8251_OUT_WR0,
 //	output wire			 AD8251_OUT_WR1
 	
-,	output wire			 AD9117_RST,
+	output wire			 AD9117_RST,
 	output wire			 AD9117_SCS,
 	output wire			 AD9117_SCK,
 	// input  wire			 AD9117_SDO,
@@ -410,6 +419,26 @@ endgenerate
 always @(posedge clk1) begin
 	ADCdiff <= ADCout[0] - ADCout[1];
 end
+
+reg [11:0] adc_A;
+reg [11:0] adc_B;
+
+AD7266 AD7266_inst(
+    .clk_in(clk1), 
+    .rst_in(rst),
+    .SCLK(AD7266_CLK),
+    .CSn(AD7266_CSn),
+    .SGL(AD7266_SGL),
+    .RANGE(AD7266_RANGE),
+    .SDIO_N(AD7266_SDIO_N),
+    .SDIO_P(AD7266_SDIO_P),
+
+    .s_data_A(adc_A),
+    .s_data_B(adc_B),
+    .A0_out(AD7266_A0),
+    .A1_out(AD7266_A1),
+    .A2_out(AD7266_A2)
+    );
 
 ///////////////////////////////////////////////////////////////////////////////
 // DACs
