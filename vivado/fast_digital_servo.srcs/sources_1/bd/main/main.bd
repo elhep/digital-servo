@@ -49,6 +49,24 @@
             "left": "2",
             "right": "0"
           },
+          "ADC_AFE_TERM0": {
+            "direction": "I"
+          },
+          "ADC_AFE_TERM1": {
+            "direction": "I"
+          },
+          "ADC_AFE_GAINX10_0": {
+            "direction": "O"
+          },
+          "ADC_AFE_GAINX10_1": {
+            "direction": "O"
+          },
+          "ADC_AFE_nSHDN0": {
+            "direction": "O"
+          },
+          "ADC_AFE_nSHDN1": {
+            "direction": "O"
+          },
           "configurationNR": {
             "direction": "I",
             "left": "12287",
@@ -104,66 +122,79 @@
             "left": "3",
             "right": "0"
           },
-          "AD9783_RST": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "AD9783_SCS": {
-            "direction": "O"
-          },
-          "AD9783_SCK": {
-            "direction": "O"
-          },
-          "AD9783_SDO": {
-            "direction": "I"
-          },
-          "AD9783_SDI": {
-            "direction": "O"
-          },
-          "AD9783_CLK_P": {
+          "AD7266_CLK": {
             "type": "clk",
             "direction": "O"
           },
-          "AD9783_CLK_N": {
-            "type": "clk",
+          "AD7266_CSn": {
             "direction": "O"
           },
-          "AD9783_DCI_P": {
+          "AD7266_SGL": {
             "direction": "O"
           },
-          "AD9783_DCI_N": {
+          "AD7266_RANGE": {
             "direction": "O"
           },
-          "AD9783_D_P": {
+          "AD7266_SDIO_N": {
+            "direction": "IO"
+          },
+          "AD7266_SDIO_P": {
+            "direction": "IO"
+          },
+          "AD7266_A0": {
+            "direction": "O"
+          },
+          "AD7266_A1": {
+            "direction": "O"
+          },
+          "AD7266_A2": {
+            "direction": "O"
+          },
+          "AD9117_RST": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "AD9117_SCS": {
+            "direction": "O"
+          },
+          "AD9117_SCK": {
+            "direction": "O"
+          },
+          "AD9117_SDIO": {
+            "direction": "IO"
+          },
+          "AD9117_DCI_P": {
+            "direction": "O"
+          },
+          "AD9117_D_P": {
             "direction": "O",
-            "left": "15",
+            "left": "13",
             "right": "0"
           },
-          "AD9783_D_N": {
+          "DAC_AFE_nPD": {
             "direction": "O",
-            "left": "15",
+            "left": "1",
             "right": "0"
           },
-          "AD5791_SCS": {
+          "AD5722_SCS": {
             "direction": "O"
           },
-          "AD5791_SCK": {
+          "AD5722_SCK": {
             "direction": "O"
           },
-          "AD5791_SDI": {
+          "AD5722_SDI": {
             "direction": "O"
           },
-          "AD5791_SDO": {
+          "AD5722_SDO": {
             "direction": "I"
           },
-          "AD5791_LDAC": {
+          "AD5722_LDAC": {
             "direction": "O"
           },
-          "AD5791_CLR": {
+          "AD5722_CLR": {
             "direction": "O"
           },
-          "AD5791_RST": {
-            "type": "rst",
+          "AD5722_BIN": {
             "direction": "O"
           }
         }
