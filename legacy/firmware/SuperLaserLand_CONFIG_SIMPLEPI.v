@@ -364,7 +364,7 @@ generate for (dac_index = 0; dac_index < 3; dac_index = dac_index+1) begin: dacs
 	);
 	
 	always @(posedge clk1) LED_G_f[dac_index] <= DACconfig[dac_index][176] ? ((RELOCKhold[dac_index] || LIMITrailed[dac_index][0] || LIMITrailed[dac_index][1]) ? LED2red[0] : LED2green[0]) : LED2off[0];
-	always @(posedge clk1) LED_R_f[dac_index] <= DACconfig[dac_index][176] ? ((RELOCKhold[dac_index] || LIMITrailed[dac_index][0] || LIMITrailed[dac_index][1]) ? LED2red[1] : LED2green[1]) : LED2off[1];
+	// always @(posedge clk1) LED_R_f[dac_index] <= DACconfig[dac_index][176] ? ((RELOCKhold[dac_index] || LIMITrailed[dac_index][0] || LIMITrailed[dac_index][1]) ? LED2red[1] : LED2green[1]) : LED2off[1];
 end
 endgenerate
 

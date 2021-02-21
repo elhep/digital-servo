@@ -144,7 +144,7 @@ wire [15:0] cmd_addr, cmd_data1in, cmd_data2in, cmd_dataout_M25P32_CONFIG, cmd_d
 //wire 			cmd_trig;
 
 wire  [2:0] DOUT;
-
+wire [2:0] DIN;
 ///////////////////////////////////////////////////////////////////////////////
 // Assigns
 //assign i2c_sda = 1'bz;
@@ -184,9 +184,9 @@ reg [2:0] LED_G_f; //, LED_R_f;
 assign					  LED_G = LED_G_f;
 // assign					  LED_R = LED_R_f;
 
-// // DIN
-// reg [2:0] DIN_f;
-// always @(posedge clk1) DIN_f <= DIN;
+// DIN
+reg [2:0] DIN_f;
+always @(posedge clk1) DIN_f <= DIN;
 
 // DOUT
 reg [2:0] DOUT_f;
@@ -199,7 +199,7 @@ wire dac_clk;
 IBUFGDS #(
 	.DIFF_TERM("TRUE"),
 	.IBUF_LOW_PWR("FALSE")
-) IBUFGDS (
+) IBUFGDS_0 (
 	.I(ADC_CLK_P),
 	.IB(ADC_CLK_N),
 	.O(adc_clk)
@@ -208,7 +208,7 @@ IBUFGDS #(
 IBUFGDS #(
 	.DIFF_TERM("TRUE"),
 	.IBUF_LOW_PWR("FALSE")
-) IBUFGDS (
+) IBUFGDS_1 (
 	.I(DAC_CLK_P),
 	.IB(DAC_CLK_N),
 	.O(dac_clk)
