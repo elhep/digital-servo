@@ -36,6 +36,18 @@
       "gpio_rtl": {
         "mode": "Master",
         "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
+      },
+      "USBIND_0_0": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:display_processing_system7:usbctrl_rtl:1.0"
+      },
+      "IIC_0_0": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:iic_rtl:1.0"
+      },
+      "MDIO_ETHERNET_0_0": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:mdio_rtl:1.0"
       }
     },
     "components": {
@@ -1731,6 +1743,24 @@
         "interface_ports": [
           "axi_dma_0/M_AXI_MM2S",
           "axi_mem_intercon/S01_AXI"
+        ]
+      },
+      "processing_system7_0_USBIND_0": {
+        "interface_ports": [
+          "USBIND_0_0",
+          "processing_system7_0/USBIND_0"
+        ]
+      },
+      "processing_system7_0_MDIO_ETHERNET_0": {
+        "interface_ports": [
+          "MDIO_ETHERNET_0_0",
+          "processing_system7_0/MDIO_ETHERNET_0"
+        ]
+      },
+      "processing_system7_0_IIC_0": {
+        "interface_ports": [
+          "IIC_0_0",
+          "processing_system7_0/IIC_0"
         ]
       },
       "axis_data_fifo_0_M_AXIS": {

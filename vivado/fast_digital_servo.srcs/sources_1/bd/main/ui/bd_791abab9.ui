@@ -1,39 +1,45 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.725",
-   "Default View_TopLeft":"-229,-981",
+   "Default View_TopLeft":"-102,-981",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 4 -x 1430 -y -150 -defaultsOSRD
-preplace port gpio_rtl -pg 1 -lvl 4 -x 1430 -y -580 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 250 -y 10 -defaultsOSRD
-preplace inst SuperLaserLand_0 -pg 1 -lvl 2 -x 810 -y -450 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 4 -x 1450 -y -150 -defaultsOSRD
+preplace port gpio_rtl -pg 1 -lvl 4 -x 1450 -y -580 -defaultsOSRD
+preplace port USBIND_0_0 -pg 1 -lvl 4 -x 1450 -y -10 -defaultsOSRD
+preplace port IIC_0_0 -pg 1 -lvl 4 -x 1450 -y -30 -defaultsOSRD
+preplace port MDIO_ETHERNET_0_0 -pg 1 -lvl 4 -x 1450 -y -110 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 250 -y -20 -defaultsOSRD
+preplace inst SuperLaserLand_0 -pg 1 -lvl 2 -x 840 -y -450 -defaultsOSRD
 preplace inst axi_gpio_0 -pg 1 -lvl 1 -x 250 -y -390 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 1240 -y -710 -defaultsOSRD
-preplace inst rst_ps7_0_50M -pg 1 -lvl 2 -x 810 -y 10 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 1260 -y -710 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 2 -x 840 -y 10 -defaultsOSRD
 preplace inst axi_dma_0 -pg 1 -lvl 1 -x 250 -y -590 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 3 -x 1240 -y -230 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 3 -x 1260 -y -230 -defaultsOSRD
 preplace inst axis_data_fifo_0 -pg 1 -lvl 1 -x 250 -y -890 -defaultsOSRD
 preplace inst get_config_0 -pg 1 -lvl 1 -x 250 -y -750 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -40 -180 570 110 1060
-preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 0 -470 530
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -30 -170 530 140 1090
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 0 -470 590
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 600 -10n
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 -30 -300 560J -830 1040
-preplace netloc get_config_0_cfg 1 1 1 570 -750n
-preplace netloc axi_dma_0_mm2s_introut 1 0 2 0 -190 490
-preplace netloc processing_system7_0_DDR 1 1 3 590 -90 1020 -70 1400
-preplace netloc axi_gpio_0_GPIO 1 1 3 510J -870 NJ -870 1410J
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 580J -810 1060
-preplace netloc ps7_0_axi_periph_M00_AXI 1 0 4 10 -310 540J -860 NJ -860 1400
-preplace netloc ps7_0_axi_periph_M01_AXI 1 0 4 10 -480 520J -850 NJ -850 1390
-preplace netloc axi_dma_0_M_AXI_SG 1 1 2 530J -820 1070
-preplace netloc axi_mem_intercon_M00_AXI 1 0 4 10 -170 520J -100 1030J -80 1390
-preplace netloc axi_dma_0_M_AXI_MM2S 1 1 2 550 -800 1050J
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 -40 -300 560J -830 1070
+preplace netloc get_config_0_cfg 1 1 1 580 -750n
+preplace netloc axi_dma_0_mm2s_introut 1 0 2 0 -180 490
+preplace netloc processing_system7_0_DDR 1 1 3 500 110 N 110 1420
+preplace netloc axi_gpio_0_GPIO 1 1 3 510J -870 NJ -870 1430J
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 570J -810 1090
+preplace netloc ps7_0_axi_periph_M00_AXI 1 0 4 10 -310 540J -860 NJ -860 1420
+preplace netloc ps7_0_axi_periph_M01_AXI 1 0 4 10 -480 520J -850 NJ -850 1410
+preplace netloc axi_dma_0_M_AXI_SG 1 1 2 530J -820 1100
+preplace netloc axi_mem_intercon_M00_AXI 1 0 4 10 130 NJ 130 NJ 130 1410
+preplace netloc axi_dma_0_M_AXI_MM2S 1 1 2 550 -800 1080J
 preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 2 -10 -490 500
 preplace netloc axis_data_fifo_0_M_AXIS 1 0 2 -20 -970 510
-levelinfo -pg 1 -60 250 810 1240 1430
-pagesize -pg 1 -db -bbox -sgen -60 -980 1540 400
+preplace netloc processing_system7_0_USBIND_0 1 1 3 490J 120 NJ 120 1430J
+preplace netloc processing_system7_0_IIC_0 1 1 3 490J -90 1050J -30 NJ
+preplace netloc processing_system7_0_MDIO_ETHERNET_0 1 1 3 550J -100 1060J -80 1430J
+levelinfo -pg 1 -60 250 840 1260 1450
+pagesize -pg 1 -db -bbox -sgen -60 -980 1660 400
 "
 }
 {
