@@ -5,41 +5,133 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 4 -x 1450 -y -150 -defaultsOSRD
-preplace port gpio_rtl -pg 1 -lvl 4 -x 1450 -y -580 -defaultsOSRD
-preplace port USBIND_0_0 -pg 1 -lvl 4 -x 1450 -y -10 -defaultsOSRD
-preplace port IIC_0_0 -pg 1 -lvl 4 -x 1450 -y -30 -defaultsOSRD
-preplace port MDIO_ETHERNET_0_0 -pg 1 -lvl 4 -x 1450 -y -110 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 250 -y -20 -defaultsOSRD
-preplace inst SuperLaserLand_0 -pg 1 -lvl 2 -x 840 -y -450 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 1 -x 250 -y -390 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 1260 -y -710 -defaultsOSRD
-preplace inst rst_ps7_0_50M -pg 1 -lvl 2 -x 840 -y 10 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 1 -x 250 -y -590 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 3 -x 1260 -y -230 -defaultsOSRD
-preplace inst axis_data_fifo_0 -pg 1 -lvl 1 -x 250 -y -890 -defaultsOSRD
-preplace inst get_config_0 -pg 1 -lvl 1 -x 250 -y -750 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -30 -170 530 140 1090
-preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 0 -470 590
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 600 -10n
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 -40 -300 560J -830 1070
-preplace netloc get_config_0_cfg 1 1 1 580 -750n
-preplace netloc axi_dma_0_mm2s_introut 1 0 2 0 -180 490
-preplace netloc processing_system7_0_DDR 1 1 3 500 110 N 110 1420
-preplace netloc axi_gpio_0_GPIO 1 1 3 510J -870 NJ -870 1430J
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 570J -810 1090
-preplace netloc ps7_0_axi_periph_M00_AXI 1 0 4 10 -310 540J -860 NJ -860 1420
-preplace netloc ps7_0_axi_periph_M01_AXI 1 0 4 10 -480 520J -850 NJ -850 1410
-preplace netloc axi_dma_0_M_AXI_SG 1 1 2 530J -820 1100
-preplace netloc axi_mem_intercon_M00_AXI 1 0 4 10 130 NJ 130 NJ 130 1410
-preplace netloc axi_dma_0_M_AXI_MM2S 1 1 2 550 -800 1080J
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 2 -10 -490 500
-preplace netloc axis_data_fifo_0_M_AXIS 1 0 2 -20 -970 510
-preplace netloc processing_system7_0_USBIND_0 1 1 3 490J 120 NJ 120 1430J
-preplace netloc processing_system7_0_IIC_0 1 1 3 490J -90 1050J -30 NJ
-preplace netloc processing_system7_0_MDIO_ETHERNET_0 1 1 3 550J -100 1060J -80 1430J
-levelinfo -pg 1 -60 250 840 1260 1450
-pagesize -pg 1 -db -bbox -sgen -60 -980 1660 400
+preplace port DDR -pg 1 -lvl 4 -x 1830 -y 10 -defaultsOSRD
+preplace port gpio_rtl -pg 1 -lvl 4 -x 1830 -y -930 -defaultsOSRD
+preplace port USBIND_0_0 -pg 1 -lvl 4 -x 1830 -y -10 -defaultsOSRD
+preplace port IIC_0_0 -pg 1 -lvl 4 -x 1830 -y -30 -defaultsOSRD
+preplace port MDIO_ETHERNET_0_0 -pg 1 -lvl 4 -x 1830 -y -130 -defaultsOSRD
+preplace port AD5722_BIN_0 -pg 1 -lvl 4 -x 1830 -y -160 -defaultsOSRD
+preplace port AD5722_CLR_0 -pg 1 -lvl 4 -x 1830 -y -180 -defaultsOSRD
+preplace port AD5722_LDAC_0 -pg 1 -lvl 4 -x 1830 -y -200 -defaultsOSRD
+preplace port AD5722_SCK_0 -pg 1 -lvl 4 -x 1830 -y -240 -defaultsOSRD
+preplace port AD5722_SCS_0 -pg 1 -lvl 4 -x 1830 -y -260 -defaultsOSRD
+preplace port AD5722_SDI_0 -pg 1 -lvl 4 -x 1830 -y -220 -defaultsOSRD
+preplace port AD5722_SDO_0 -pg 1 -lvl 0 -x -120 -y -360 -defaultsOSRD
+preplace port AD7266_A0_0 -pg 1 -lvl 4 -x 1830 -y -460 -defaultsOSRD
+preplace port AD7266_A1_0 -pg 1 -lvl 4 -x 1830 -y -440 -defaultsOSRD
+preplace port AD7266_A2_0 -pg 1 -lvl 4 -x 1830 -y -420 -defaultsOSRD
+preplace port AD7266_CLK_0 -pg 1 -lvl 4 -x 1830 -y -580 -defaultsOSRD
+preplace port AD7266_CSn_0 -pg 1 -lvl 4 -x 1830 -y -560 -defaultsOSRD
+preplace port AD7266_RANGE_0 -pg 1 -lvl 4 -x 1830 -y -520 -defaultsOSRD
+preplace port AD7266_SDIO_N_0 -pg 1 -lvl 4 -x 1830 -y -480 -defaultsOSRD
+preplace port AD7266_SDIO_P_0 -pg 1 -lvl 4 -x 1830 -y -500 -defaultsOSRD
+preplace port AD7266_SGL_0 -pg 1 -lvl 4 -x 1830 -y -540 -defaultsOSRD
+preplace port AD9117_DCI_P_0 -pg 1 -lvl 4 -x 1830 -y -320 -defaultsOSRD
+preplace port AD9117_RST_0 -pg 1 -lvl 4 -x 1830 -y -400 -defaultsOSRD
+preplace port AD9117_SCK_0 -pg 1 -lvl 4 -x 1830 -y -360 -defaultsOSRD
+preplace port AD9117_SCS_0 -pg 1 -lvl 4 -x 1830 -y -380 -defaultsOSRD
+preplace port AD9117_SDIO_0 -pg 1 -lvl 4 -x 1830 -y -340 -defaultsOSRD
+preplace port ADC_AFE_GAINX10_0_0 -pg 1 -lvl 4 -x 1830 -y -720 -defaultsOSRD
+preplace port ADC_AFE_GAINX10_1_0 -pg 1 -lvl 4 -x 1830 -y -700 -defaultsOSRD
+preplace port ADC_AFE_nSHDN0_0 -pg 1 -lvl 4 -x 1830 -y -680 -defaultsOSRD
+preplace port ADC_AFE_nSHDN1_0 -pg 1 -lvl 4 -x 1830 -y -660 -defaultsOSRD
+preplace port ADC_AFE_TERM0_0 -pg 1 -lvl 0 -x -120 -y -600 -defaultsOSRD
+preplace port ADC_AFE_TERM1_0 -pg 1 -lvl 0 -x -120 -y -580 -defaultsOSRD
+preplace port ADC_CLK_N_0 -pg 1 -lvl 0 -x -120 -y -340 -defaultsOSRD
+preplace port ADC_CLK_P_0 -pg 1 -lvl 0 -x -120 -y -320 -defaultsOSRD
+preplace port DAC_CLK_N_0 -pg 1 -lvl 0 -x -120 -y -300 -defaultsOSRD
+preplace port DAC_CLK_P_0 -pg 1 -lvl 0 -x -120 -y -280 -defaultsOSRD
+preplace port LTC2195_DCO_N_0 -pg 1 -lvl 0 -x -120 -y -460 -defaultsOSRD
+preplace port LTC2195_DCO_P_0 -pg 1 -lvl 0 -x -120 -y -480 -defaultsOSRD
+preplace port LTC2195_FR_N_0 -pg 1 -lvl 0 -x -120 -y -500 -defaultsOSRD
+preplace port LTC2195_FR_P_0 -pg 1 -lvl 0 -x -120 -y -520 -defaultsOSRD
+preplace port LTC2195_SCK_0 -pg 1 -lvl 4 -x 1830 -y -620 -defaultsOSRD
+preplace port LTC2195_SCS_0 -pg 1 -lvl 4 -x 1830 -y -640 -defaultsOSRD
+preplace port LTC2195_SDI_0 -pg 1 -lvl 4 -x 1830 -y -600 -defaultsOSRD
+preplace port LTC2195_SDO_0 -pg 1 -lvl 0 -x -120 -y -540 -defaultsOSRD
+preplace portBus AD9117_D_P_0 -pg 1 -lvl 4 -x 1830 -y -300 -defaultsOSRD
+preplace portBus DAC_AFE_nPD_0 -pg 1 -lvl 4 -x 1830 -y -280 -defaultsOSRD
+preplace portBus LED_G_0 -pg 1 -lvl 4 -x 1830 -y -740 -defaultsOSRD
+preplace portBus LTC2195_D0_N_0 -pg 1 -lvl 0 -x -120 -y -420 -defaultsOSRD
+preplace portBus LTC2195_D0_P_0 -pg 1 -lvl 0 -x -120 -y -440 -defaultsOSRD
+preplace portBus LTC2195_D1_N_0 -pg 1 -lvl 0 -x -120 -y -380 -defaultsOSRD
+preplace portBus LTC2195_D1_P_0 -pg 1 -lvl 0 -x -120 -y -400 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 330 -y -20 -defaultsOSRD
+preplace inst SuperLaserLand_0 -pg 1 -lvl 2 -x 1020 -y -450 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 1 -x 330 -y -390 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 1570 -y -710 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 2 -x 1020 -y 10 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 1 -x 330 -y -590 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 3 -x 1570 -y -230 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 1 -x 330 -y -890 -defaultsOSRD
+preplace inst get_config_0 -pg 1 -lvl 1 -x 330 -y -750 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 60 160 810 130 1320
+preplace netloc processing_system7_0_FCLK_CLK1 1 1 1 730 -620n
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 800 -10n
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 50 170 NJ 170 1340
+preplace netloc get_config_0_cfg 1 1 1 700 -750n
+preplace netloc axi_dma_0_mm2s_introut 1 0 2 90 130 570
+preplace netloc SuperLaserLand_0_AD5722_BIN 1 2 2 1280J -80 1780J
+preplace netloc SuperLaserLand_0_AD5722_CLR 1 2 2 1290J -70 1770J
+preplace netloc SuperLaserLand_0_AD5722_LDAC 1 2 2 1300J -60 1760J
+preplace netloc SuperLaserLand_0_AD5722_SCK 1 2 2 1310J -50 1730J
+preplace netloc SuperLaserLand_0_AD5722_SCS 1 2 2 1260J -20 1750J
+preplace netloc SuperLaserLand_0_AD5722_SDI 1 2 2 1250J -40 1790J
+preplace netloc AD5722_SDO_0_1 1 0 2 0J -310 670J
+preplace netloc SuperLaserLand_0_AD7266_A0 1 2 2 NJ -460 NJ
+preplace netloc SuperLaserLand_0_AD7266_A1 1 2 2 NJ -440 NJ
+preplace netloc SuperLaserLand_0_AD7266_A2 1 2 2 1230J -430 1810J
+preplace netloc SuperLaserLand_0_AD7266_CLK 1 2 2 1350J -550 1800J
+preplace netloc SuperLaserLand_0_AD7266_CSn 1 2 2 NJ -560 NJ
+preplace netloc SuperLaserLand_0_AD7266_RANGE 1 2 2 NJ -520 NJ
+preplace netloc Net 1 2 2 NJ -500 1740J
+preplace netloc Net1 1 2 2 1240J -490 1800J
+preplace netloc SuperLaserLand_0_AD7266_SGL 1 2 2 1240J -530 1800J
+preplace netloc SuperLaserLand_0_AD9117_D_P 1 2 2 1250J -380 1720J
+preplace netloc SuperLaserLand_0_AD9117_DCI_P 1 2 2 1350J -420 1780J
+preplace netloc SuperLaserLand_0_AD9117_RST 1 2 2 1270J -410 1790J
+preplace netloc SuperLaserLand_0_AD9117_SCK 1 2 2 1360J -400 1740J
+preplace netloc SuperLaserLand_0_AD9117_SCS 1 2 2 1230J -390 1730J
+preplace netloc Net2 1 2 2 1240J -450 1800J
+preplace netloc SuperLaserLand_0_ADC_AFE_GAINX10_0 1 2 2 1240J -890 1800J
+preplace netloc SuperLaserLand_0_ADC_AFE_GAINX10_1 1 2 2 1270J -880 1780J
+preplace netloc SuperLaserLand_0_ADC_AFE_nSHDN0 1 2 2 1280J -870 1750J
+preplace netloc SuperLaserLand_0_ADC_AFE_nSHDN1 1 2 2 1290J -860 1740J
+preplace netloc ADC_AFE_TERM0_0_1 1 0 2 40J -290 630J
+preplace netloc ADC_AFE_TERM1_0_1 1 0 2 30J -280 640J
+preplace netloc ADC_CLK_N_0_1 1 0 2 -100J 150 790J
+preplace netloc ADC_CLK_P_0_1 1 0 2 -60J -270 750J
+preplace netloc SuperLaserLand_0_DAC_AFE_nPD 1 2 2 1270J -10 1740J
+preplace netloc DAC_CLK_N_0_1 1 0 2 NJ -300 NJ
+preplace netloc DAC_CLK_P_0_1 1 0 2 -70J -260 760J
+preplace netloc SuperLaserLand_0_LED_G 1 2 2 1230J -900 1810J
+preplace netloc LTC2195_D0_N_0_1 1 0 2 -40J -230 720J
+preplace netloc LTC2195_D0_P_0_1 1 0 2 -30J -220 710J
+preplace netloc LTC2195_D1_N_0_1 1 0 2 -90J -210 780J
+preplace netloc LTC2195_D1_P_0_1 1 0 2 -80J -200 770J
+preplace netloc LTC2195_DCO_N_0_1 1 0 2 10J -250 660J
+preplace netloc LTC2195_DCO_P_0_1 1 0 2 20J -240 650J
+preplace netloc LTC2195_FR_N_0_1 1 0 2 -20J -190 700J
+preplace netloc LTC2195_FR_P_0_1 1 0 2 -50J -170 740J
+preplace netloc SuperLaserLand_0_LTC2195_SCK 1 2 2 1380J -570 1730J
+preplace netloc SuperLaserLand_0_LTC2195_SCS 1 2 2 1250J -910 1790J
+preplace netloc SuperLaserLand_0_LTC2195_SDI 1 2 2 1360J -540 1750J
+preplace netloc LTC2195_SDO_0_1 1 0 2 -10J -180 690J
+preplace netloc ps7_0_axi_periph_M01_AXI 1 0 4 90 -480 610J -850 NJ -850 1720
+preplace netloc processing_system7_0_DDR 1 1 3 780 -100 1230 10 N
+preplace netloc axi_gpio_0_GPIO 1 1 3 620J -920 NJ -920 1810J
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 2 80 -490 580
+preplace netloc ps7_0_axi_periph_M00_AXI 1 0 4 90 -470 590J -930 NJ -930 1730
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 680J -810 1380
+preplace netloc axi_mem_intercon_M00_AXI 1 0 4 80 140 NJ 140 NJ 140 1720
+preplace netloc axi_dma_0_M_AXI_SG 1 1 2 600J -820 1370
+preplace netloc axi_dma_0_M_AXI_MM2S 1 1 2 630 -800 1330J
+preplace netloc processing_system7_0_USBIND_0 1 1 3 580J 110 1380J 0 1810J
+preplace netloc processing_system7_0_MDIO_ETHERNET_0 1 1 3 600J 120 NJ 120 1800J
+preplace netloc processing_system7_0_IIC_0 1 1 3 800J -90 1240J -30 NJ
+preplace netloc axis_data_fifo_0_M_AXIS 1 0 2 70 -970 580
+levelinfo -pg 1 -120 330 1020 1570 1830
+pagesize -pg 1 -db -bbox -sgen -330 -980 2050 400
 "
 }
 {
