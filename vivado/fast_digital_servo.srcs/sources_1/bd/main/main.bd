@@ -630,17 +630,7 @@
           "clk1_in": {
             "direction": "I"
           },
-          "DIN": {
-            "direction": "I",
-            "left": "2",
-            "right": "0"
-          },
           "LED_G": {
-            "direction": "O",
-            "left": "2",
-            "right": "0"
-          },
-          "LED_R": {
             "direction": "O",
             "left": "2",
             "right": "0"

@@ -55,9 +55,9 @@ module SuperLaserLand(
 //	output wire        mcb3_dram_cs_n,
 //	input  wire        c3_sys_rst_n
 
-	input wire   [2:0] DIN,
+	// input wire   [2:0] DIN,
 	output wire	 [2:0] LED_G,
-	output wire	 [2:0] LED_R,
+	// output wire	 [2:0] LED_R,
 
 //,	output wire			 AD8251_IN_A0,
 //	output wire			 AD8251_IN_A1,
@@ -180,13 +180,13 @@ always @(posedge clk1) led_f <= ~{cmd_dataout_LTC2195_0[3:0], configuration[3:0]
 assign					  led = led_f;
 
 // LEDs on box front panel
-reg [2:0] LED_G_f, LED_R_f;
+reg [2:0] LED_G_f; //, LED_R_f;
 assign					  LED_G = LED_G_f;
-assign					  LED_R = LED_R_f;
+// assign					  LED_R = LED_R_f;
 
-// DIN
-reg [2:0] DIN_f;
-always @(posedge clk1) DIN_f <= DIN;
+// // DIN
+// reg [2:0] DIN_f;
+// always @(posedge clk1) DIN_f <= DIN;
 
 // DOUT
 reg [2:0] DOUT_f;
