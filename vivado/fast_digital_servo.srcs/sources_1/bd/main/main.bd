@@ -128,7 +128,7 @@
             "value": "0"
           },
           "PCW_EN_EMIO_GPIO": {
-            "value": "0"
+            "value": "1"
           },
           "PCW_EN_EMIO_I2C0": {
             "value": "1"
@@ -164,7 +164,13 @@
             "value": "1"
           },
           "PCW_GPIO_EMIO_GPIO_ENABLE": {
-            "value": "0"
+            "value": "1"
+          },
+          "PCW_GPIO_EMIO_GPIO_IO": {
+            "value": "28"
+          },
+          "PCW_GPIO_EMIO_GPIO_WIDTH": {
+            "value": "28"
           },
           "PCW_I2C0_I2C0_IO": {
             "value": "EMIO"
