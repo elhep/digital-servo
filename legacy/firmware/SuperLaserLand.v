@@ -433,8 +433,8 @@ AD7266 AD7266_inst(
     .SDIO_N(AD7266_SDIO_N),
     .SDIO_P(AD7266_SDIO_P),
 
-    .s_data_A(adc_A),
-    .s_data_B(adc_B),
+    .s_data_A(12'b0),
+    .s_data_B(12'b0),
     .A0_out(AD7266_A0),
     .A1_out(AD7266_A1),
     .A2_out(AD7266_A2)
