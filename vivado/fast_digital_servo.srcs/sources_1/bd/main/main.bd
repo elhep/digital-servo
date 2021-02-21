@@ -786,6 +786,22 @@
           },
           "AD5722_BIN": {
             "direction": "O"
+          },
+          "ADC_CLK_N": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "ADC_CLK_P": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "DAC_CLK_N": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "DAC_CLK_P": {
+            "type": "clk",
+            "direction": "I"
           }
         }
       }

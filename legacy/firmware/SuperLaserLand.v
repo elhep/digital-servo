@@ -123,7 +123,13 @@ module SuperLaserLand(
 	input  wire			 AD5722_SDO,
 	output wire			 AD5722_LDAC,
 	output wire			 AD5722_CLR,
-	output wire			 AD5722_BIN
+	output wire			 AD5722_BIN,
+
+	// input wire CLK_100M,			// problably not needed since PS provides basic clock for PL
+	input wire ADC_CLK_N,
+	input wire ADC_CLK_P,
+	input wire DAC_CLK_N,
+	input wire DAC_CLK_P
 );
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -185,6 +191,28 @@ always @(posedge clk1) DIN_f <= DIN;
 // DOUT
 reg [2:0] DOUT_f;
 assign					  DOUT = DOUT_f;
+
+// Clock buffers for ADC and DAC clocks from Si5340
+wire adc_clk;
+wire dac_clk;
+
+IBUFGDS #(
+	.DIFF_TERM("TRUE"),
+	.IBUF_LOW_PWR("FALSE")
+) IBUFGDS (
+	.I(ADC_CLK_P),
+	.IB(ADC_CLK_N),
+	.O(adc_clk)
+);
+
+IBUFGDS #(
+	.DIFF_TERM("TRUE"),
+	.IBUF_LOW_PWR("FALSE")
+) IBUFGDS (
+	.I(DAC_CLK_P),
+	.IB(DAC_CLK_N),
+	.O(dac_clk)
+);
 
 ///////////////////////////////////////////////////////////////////////////////
 // Clock buffer - this seems to be necessary for the memc3_infrastructure module to work
