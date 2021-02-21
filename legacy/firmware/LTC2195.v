@@ -232,34 +232,34 @@ dcm_sp_inst0(
 	.DSSEN(1'b0)				// uused pin - tie low
 );
 
-// DDR register
-wire ENC_out;
+// // DDR register
+// wire ENC_out;
 
-ODDR2 #(
-	.DDR_ALIGNMENT("C0"),
-	.INIT(1'b0),
-	.SRTYPE("ASYNC")
-)
-oddr2_inst(
-	.D0(1'b0),
-	.D1(1'b1),
-	.C0(clkPS),
-	.C1(clkPS180),
-	.CE(1'b1),
-	.Q(ENC_out),
-	.R(rst_in),
-	.S()
-);
+// ODDR2 #(
+// 	.DDR_ALIGNMENT("C0"),
+// 	.INIT(1'b0),
+// 	.SRTYPE("ASYNC")
+// )
+// oddr2_inst(
+// 	.D0(1'b0),
+// 	.D1(1'b1),
+// 	.C0(clkPS),
+// 	.C1(clkPS180),
+// 	.CE(1'b1),
+// 	.Q(ENC_out),
+// 	.R(rst_in),
+// 	.S()
+// );
 
-// Output buffer
-OBUFDS #(
-	.IOSTANDARD("LVDS_25")
-)
-obufds_inst(
-	.O(ENC_out_p),
-	.OB(ENC_out_n),
-	.I(ENC_out)
-);
+// // Output buffer
+// OBUFDS #(
+// 	.IOSTANDARD("LVDS_25")
+// )
+// obufds_inst(
+// 	.O(ENC_out_p),
+// 	.OB(ENC_out_n),
+// 	.I(ENC_out)
+// );
 
 ///////////////////////////////////////////////////////////////////////////////
 // LVDS DCO input

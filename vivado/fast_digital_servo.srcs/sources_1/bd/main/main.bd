@@ -680,12 +680,6 @@
           "LTC2195_SDO": {
             "direction": "I"
           },
-          "LTC2195_ENC_P": {
-            "direction": "O"
-          },
-          "LTC2195_ENC_N": {
-            "direction": "O"
-          },
           "LTC2195_FR_P": {
             "direction": "I"
           },
