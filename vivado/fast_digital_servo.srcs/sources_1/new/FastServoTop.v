@@ -91,5 +91,7 @@ module FastServoTop(
         .DCLKIO(AD9117_DCLKIO)
     );
 
+    assign ADCraw[0] = DACin[0];
+    assign ADCraw[1] = DACin[1];
 
 endmodule

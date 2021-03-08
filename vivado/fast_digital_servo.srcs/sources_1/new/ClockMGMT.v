@@ -38,7 +38,7 @@ module ClockMGMT(
     output wire CLK_100M,
 
     output wire DCO,
-    output wire DCO_2X,     // 2 times faster than DCO
+    output wire DCOB,     // 2 times faster than DCO
     output wire DCO_2D     // 2 times slower than DCO
 
 
@@ -50,7 +50,7 @@ module ClockMGMT(
     DCO_CLK dco_clk_inst (
         .clk_out1(DCO_2D),
         .clk_out2(DCO),
-        .clk_out3(DCO_2X),
+        .clk_out3(DCOB),
         .reset(rst_in),
         .locked(dco_locked),
 
