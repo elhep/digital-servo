@@ -41,7 +41,11 @@ module FastServoTop(
 
     output wire  [13:0] AD9117_D,
     output wire  AD9117_DCLKIO,
-    output wire  AD9117_RESET
+    output wire  AD9117_RESET,
+
+    output wire [3:0] FP_LEDS,
+    output wire [2:0] LEDS,
+    output wire [1:0] DIO
 
     );
 
@@ -97,5 +101,40 @@ module FastServoTop(
 
     assign ADCraw[0] = DACin[0];
     assign ADCraw[1] = DACin[1];
+
+    // counters for ADC and DAC clock so Vivado it won't misoptimise
+    // assuming ADC and DAC clk configured to 100 MHz - output will
+    // blink with freq of 1 Hz
+    reg [25:0] counter_adc;
+    reg [25:0] counter_dac;
+    reg [25:0] counter_100m;
+    wire counter_adc_done, counter_dac_done, counter_100m_done;
+    
+    always @(posedge adc_clk) begin
+        if (counter_adc == 26'b0) 
+            counter_adc <= 26'd50_000_000;
+        else 
+            counter_adc <= counter_adc - 1;
+    end
+    always @(posedge dac_clk) begin
+        if (counter_dac == 26'b0) 
+            counter_dac <= 26'd50_000_000;
+        else 
+            counter_dac <= counter_dac - 1;
+    end
+    always @(posedge clk_100m) begin
+        if (counter_100m == 26'b0) 
+            counter_100m <= 26'd50_000_000;
+        else 
+            counter_100m <= counter_100m - 1;
+    end
+
+    assign counter_adc_done = (counter_adc == 0) ? 1'b1 : 1'b0;
+    assign counter_dac_done = (counter_dac == 0) ? 1'b1 : 1'b0;
+    assign counter_100m_done = (counter_100m == 0) ? 1'b1 : 1'b0;
+
+    assign FP_LEDS = {4{counter_adc_done}};
+    assign LEDS = {3{counter_dac_done}};
+    assign DIO = {counter_100m_done, ~counter_100m_done};
 
 endmodule
