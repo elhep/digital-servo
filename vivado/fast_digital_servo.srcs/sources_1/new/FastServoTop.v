@@ -32,8 +32,8 @@ module FastServoTop(
 
     input wire CLK_100,         // Oscillator clock 100 MHz
 
-	// input  wire			 LTC2195_FR_P,
-	// input  wire			 LTC2195_FR_N,
+	input  wire			 LTC2195_FR_P,
+	input  wire			 LTC2195_FR_N,
 	input  wire  [3:0] LTC2195_D0_P,
 	input  wire  [3:0] LTC2195_D0_N,
 	input  wire  [3:0] LTC2195_D1_P,
@@ -45,7 +45,7 @@ module FastServoTop(
 
     );
 
-    wire adc_clk, dac_clk, clk_100m, dco_clk, dco_2x_clk, dco_2d_clk;
+    wire adc_clk, dac_clk, clk_100m, dco_clk, dcob_clk, dco_2d_clk;
     ClockMGMT clocks (
         .rst_in(rst_in),
         .FPGA_CLK1_P(FPGA_CLK1_P),
@@ -60,23 +60,27 @@ module FastServoTop(
         .ADC_CLK(adc_clk),
         .DAC_CLK(dac_clk),
         .DCO(dco_clk),
-        .DCO_2X(dco_2x_clk),
+        .DCOB(dcob_clk),
         .DCO_2D(dco_2d_clk),
         .CLK_100M(clk_100m)
     );
     wire signed	[15:0]				ADCraw[0:1];		// out of the LTC2195
+    wire [3:0] s_frame;
 
     LTC2195 ADC_inst(
         .rst_in(rst_in),
         .DCO(dco_clk),
         .DCO_2D(dco_2d_clk),
-        .DCO_2X(dco_2x_clk),
+        .DCOB(dcob_clk),
         .D0_in_p(LTC2195_D0_P),
         .D0_in_n(LTC2195_D0_N),
         .D1_in_p(LTC2195_D1_P),
         .D1_in_n(LTC2195_D1_N),
         .ADC0_out(ADCraw[0]),
-        .ADC1_out(ADCraw[1])
+        .ADC1_out(ADCraw[1]),
+        .FR_in_p(LTC2195_FR_P),
+        .FR_in_n(LTC2195_FR_N),
+        .FR_out(s_frame)
     );
 
     wire signed [15:0] DACin[0:1];

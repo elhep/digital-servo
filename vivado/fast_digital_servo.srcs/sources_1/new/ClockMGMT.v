@@ -38,7 +38,7 @@ module ClockMGMT(
     output wire CLK_100M,
 
     output wire DCO,
-    output wire DCOB,     // 2 times faster than DCO
+    output wire DCOB,     
     output wire DCO_2D     // 2 times slower than DCO
 
 
