@@ -30,7 +30,7 @@ module AD9117(
 	input	 wire						   rst_in,
 
 	
-	output reg						 	rst_out,
+	output wire						 	rst_out,
 	
 	input  wire	signed	  [15:0] DAC0_in,
 	input  wire	signed	  [15:0] DAC1_in,
