@@ -1,4 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../../fast_digital_servo.srcs/sources_1/ip/dds_LUT_pw24_ow24/sim/dds_LUT_pw24_ow24.vhd" \
-
-nosort

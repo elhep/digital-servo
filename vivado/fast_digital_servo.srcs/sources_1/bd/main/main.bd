@@ -1,20 +1,70 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xBDC04C9E684B8150",
+      "boundary_crc": "0x9C41FE668726EF2E",
       "device": "xc7z020clg484-2",
       "name": "main",
       "synth_flow_mode": "None",
-      "tool_version": "2019.2"
+      "tool_version": "2019.2",
+      "validated": "true"
     },
     "design_tree": {
-      "processing_system7_0": "",
-      "SuperLaserLand_0": ""
+      "processing_system7_0": ""
     },
     "interface_ports": {
       "DDR": {
         "mode": "Master",
-        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0"
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "TIMEPERIOD_PS": {
+            "value": "1250",
+            "value_src": "default"
+          },
+          "MEMORY_TYPE": {
+            "value": "COMPONENTS",
+            "value_src": "default"
+          },
+          "DATA_WIDTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "CS_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_MASK_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "SLOT": {
+            "value": "Single",
+            "value_src": "default"
+          },
+          "MEM_ADDR_MAP": {
+            "value": "ROW_COLUMN_BANK",
+            "value_src": "default"
+          },
+          "BURST_LENGTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "AXI_ARBITRATION_SCHEME": {
+            "value": "TDM",
+            "value_src": "default"
+          },
+          "CAS_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CAS_WRITE_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          }
+        }
       },
       "IIC_0_0": {
         "mode": "Master",
@@ -22,11 +72,23 @@
       },
       "MDIO_ETHERNET_0_0": {
         "mode": "Master",
-        "vlnv": "xilinx.com:interface:mdio_rtl:1.0"
+        "vlnv": "xilinx.com:interface:mdio_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
       },
       "FIXED_IO_0": {
         "mode": "Master",
-        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0"
+        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -500,190 +562,13 @@
             "value": "0"
           }
         }
-      },
-      "SuperLaserLand_0": {
-        "vlnv": "xilinx.com:module_ref:SuperLaserLand:1.0",
-        "xci_name": "main_SuperLaserLand_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "SuperLaserLand",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk1_in": {
-            "direction": "I"
-          },
-          "LED_G": {
-            "direction": "O",
-            "left": "2",
-            "right": "0"
-          },
-          "ADC_AFE_TERM0": {
-            "direction": "I"
-          },
-          "ADC_AFE_TERM1": {
-            "direction": "I"
-          },
-          "ADC_AFE_GAINX10_0": {
-            "direction": "O"
-          },
-          "ADC_AFE_GAINX10_1": {
-            "direction": "O"
-          },
-          "ADC_AFE_nSHDN0": {
-            "direction": "O"
-          },
-          "ADC_AFE_nSHDN1": {
-            "direction": "O"
-          },
-          "configurationNR": {
-            "direction": "I",
-            "left": "12287",
-            "right": "0"
-          },
-          "LTC2195_SCS": {
-            "direction": "O"
-          },
-          "LTC2195_SCK": {
-            "direction": "O"
-          },
-          "LTC2195_SDI": {
-            "direction": "O"
-          },
-          "LTC2195_SDO": {
-            "direction": "I"
-          },
-          "LTC2195_FR_P": {
-            "direction": "I"
-          },
-          "LTC2195_FR_N": {
-            "direction": "I"
-          },
-          "LTC2195_DCO_P": {
-            "direction": "I"
-          },
-          "LTC2195_DCO_N": {
-            "direction": "I"
-          },
-          "LTC2195_D0_P": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "LTC2195_D0_N": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "LTC2195_D1_P": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "LTC2195_D1_N": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "AD7266_CLK": {
-            "type": "clk",
-            "direction": "O"
-          },
-          "AD7266_CSn": {
-            "direction": "O"
-          },
-          "AD7266_SGL": {
-            "direction": "O"
-          },
-          "AD7266_RANGE": {
-            "direction": "O"
-          },
-          "AD7266_SDIO_N": {
-            "direction": "IO"
-          },
-          "AD7266_SDIO_P": {
-            "direction": "IO"
-          },
-          "AD7266_A0": {
-            "direction": "O"
-          },
-          "AD7266_A1": {
-            "direction": "O"
-          },
-          "AD7266_A2": {
-            "direction": "O"
-          },
-          "AD9117_RST": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "AD9117_SCS": {
-            "direction": "O"
-          },
-          "AD9117_SCK": {
-            "direction": "O"
-          },
-          "AD9117_SDIO": {
-            "direction": "IO"
-          },
-          "AD9117_DCI_P": {
-            "direction": "O"
-          },
-          "AD9117_D_P": {
-            "direction": "O",
-            "left": "13",
-            "right": "0"
-          },
-          "DAC_AFE_nPD": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "AD5722_SCS": {
-            "direction": "O"
-          },
-          "AD5722_SCK": {
-            "direction": "O"
-          },
-          "AD5722_SDI": {
-            "direction": "O"
-          },
-          "AD5722_SDO": {
-            "direction": "I"
-          },
-          "AD5722_LDAC": {
-            "direction": "O"
-          },
-          "AD5722_CLR": {
-            "direction": "O"
-          },
-          "AD5722_BIN": {
-            "direction": "O"
-          },
-          "ADC_CLK_N": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "ADC_CLK_P": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "DAC_CLK_N": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "DAC_CLK_P": {
-            "type": "clk",
-            "direction": "I"
-          }
-        }
       }
     },
     "interface_nets": {
-      "processing_system7_0_FIXED_IO": {
+      "processing_system7_0_IIC_0": {
         "interface_ports": [
-          "FIXED_IO_0",
-          "processing_system7_0/FIXED_IO"
+          "IIC_0_0",
+          "processing_system7_0/IIC_0"
         ]
       },
       "processing_system7_0_MDIO_ETHERNET_0": {
@@ -692,16 +577,16 @@
           "processing_system7_0/MDIO_ETHERNET_0"
         ]
       },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO_0",
+          "processing_system7_0/FIXED_IO"
+        ]
+      },
       "processing_system7_0_DDR": {
         "interface_ports": [
           "DDR",
           "processing_system7_0/DDR"
-        ]
-      },
-      "processing_system7_0_IIC_0": {
-        "interface_ports": [
-          "IIC_0_0",
-          "processing_system7_0/IIC_0"
         ]
       }
     },
