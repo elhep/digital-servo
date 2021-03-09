@@ -1,25 +1,64 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.666528",
-   "Default View_TopLeft":"-131,-639",
+   "Default View_TopLeft":"-131,-792",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 2 -x 1840 -y 10 -defaultsOSRD
-preplace port IIC_0_0 -pg 1 -lvl 2 -x 1840 -y -30 -defaultsOSRD
-preplace port MDIO_ETHERNET_0_0 -pg 1 -lvl 2 -x 1840 -y -130 -defaultsOSRD
-preplace port FIXED_IO_0 -pg 1 -lvl 2 -x 1840 -y -50 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 3 -x 1840 -y 10 -defaultsOSRD
+preplace port IIC_0_0 -pg 1 -lvl 3 -x 1840 -y -30 -defaultsOSRD
+preplace port MDIO_ETHERNET_0_0 -pg 1 -lvl 3 -x 1840 -y -130 -defaultsOSRD
+preplace port FIXED_IO_0 -pg 1 -lvl 3 -x 1840 -y -50 -defaultsOSRD
+preplace port AD9117_DCLKIO_0 -pg 1 -lvl 3 -x 1840 -y -530 -defaultsOSRD
+preplace port AD9117_RESET_0 -pg 1 -lvl 3 -x 1840 -y -510 -defaultsOSRD
+preplace port CLK_100_0 -pg 1 -lvl 0 -x -130 -y -490 -defaultsOSRD
+preplace port FPGA_CLK1_N_0 -pg 1 -lvl 0 -x -130 -y -590 -defaultsOSRD
+preplace port FPGA_CLK1_P_0 -pg 1 -lvl 0 -x -130 -y -610 -defaultsOSRD
+preplace port FPGA_CLK2_N_0 -pg 1 -lvl 0 -x -130 -y -550 -defaultsOSRD
+preplace port FPGA_CLK2_P_0 -pg 1 -lvl 0 -x -130 -y -570 -defaultsOSRD
+preplace port LTC2195_DCO_N_0 -pg 1 -lvl 0 -x -130 -y -510 -defaultsOSRD
+preplace port LTC2195_DCO_P_0 -pg 1 -lvl 0 -x -130 -y -530 -defaultsOSRD
+preplace port LTC2195_FR_N_0 -pg 1 -lvl 0 -x -130 -y -450 -defaultsOSRD
+preplace port LTC2195_FR_P_0 -pg 1 -lvl 0 -x -130 -y -470 -defaultsOSRD
+preplace portBus AD9117_D_0 -pg 1 -lvl 3 -x 1840 -y -550 -defaultsOSRD
+preplace portBus DIO_0 -pg 1 -lvl 3 -x 1840 -y -450 -defaultsOSRD
+preplace portBus FP_LEDS_0 -pg 1 -lvl 3 -x 1840 -y -490 -defaultsOSRD
+preplace portBus LEDS_0 -pg 1 -lvl 3 -x 1840 -y -470 -defaultsOSRD
+preplace portBus LTC2195_D0_N_0 -pg 1 -lvl 0 -x -130 -y -410 -defaultsOSRD
+preplace portBus LTC2195_D0_P_0 -pg 1 -lvl 0 -x -130 -y -430 -defaultsOSRD
+preplace portBus LTC2195_D1_N_0 -pg 1 -lvl 0 -x -130 -y -370 -defaultsOSRD
+preplace portBus LTC2195_D1_P_0 -pg 1 -lvl 0 -x -130 -y -390 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -x 260 -y -290 -defaultsOSRD
-preplace inst FastServoTop_0 -pg 1 -lvl 1 -x 260 -y 0 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 -110 190 480
-preplace netloc processing_system7_0_IIC_0 1 1 1 490J -290n
-preplace netloc processing_system7_0_MDIO_ETHERNET_0 1 1 1 520J -350n
-preplace netloc processing_system7_0_FIXED_IO 1 1 1 510J -310n
-preplace netloc processing_system7_0_DDR 1 1 1 500 -330n
-levelinfo -pg 1 -130 260 1840
-pagesize -pg 1 -db -bbox -sgen -130 -1000 2050 400
+preplace inst FastServoTop_0 -pg 1 -lvl 2 -x 1170 -y -500 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 -100 -170 490
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 530 -630n
+preplace netloc FastServoTop_0_AD9117_D 1 2 1 NJ -550
+preplace netloc FastServoTop_0_AD9117_DCLKIO 1 2 1 NJ -530
+preplace netloc FastServoTop_0_AD9117_RESET 1 2 1 NJ -510
+preplace netloc CLK_100_0_1 1 0 2 NJ -490 NJ
+preplace netloc FastServoTop_0_DIO 1 2 1 NJ -450
+preplace netloc FastServoTop_0_FP_LEDS 1 2 1 NJ -490
+preplace netloc FPGA_CLK1_N_0_1 1 0 2 NJ -590 NJ
+preplace netloc FPGA_CLK1_P_0_1 1 0 2 NJ -610 NJ
+preplace netloc FPGA_CLK2_N_0_1 1 0 2 NJ -550 NJ
+preplace netloc FPGA_CLK2_P_0_1 1 0 2 NJ -570 NJ
+preplace netloc FastServoTop_0_LEDS 1 2 1 NJ -470
+preplace netloc LTC2195_D0_N_0_1 1 0 2 -110J -440 540J
+preplace netloc LTC2195_D0_P_0_1 1 0 2 NJ -430 NJ
+preplace netloc LTC2195_D1_N_0_1 1 0 2 -100J -420 520J
+preplace netloc LTC2195_D1_P_0_1 1 0 2 -90J -410 510J
+preplace netloc LTC2195_DCO_N_0_1 1 0 2 NJ -510 NJ
+preplace netloc LTC2195_DCO_P_0_1 1 0 2 NJ -530 NJ
+preplace netloc LTC2195_FR_N_0_1 1 0 2 NJ -450 NJ
+preplace netloc LTC2195_FR_P_0_1 1 0 2 NJ -470 NJ
+preplace netloc processing_system7_0_IIC_0 1 1 2 NJ -290 1350
+preplace netloc processing_system7_0_MDIO_ETHERNET_0 1 1 2 500J -690 1370
+preplace netloc processing_system7_0_FIXED_IO 1 1 2 490J -700 1380
+preplace netloc processing_system7_0_DDR 1 1 2 480 -300 1360
+levelinfo -pg 1 -130 260 1170 1840
+pagesize -pg 1 -db -bbox -sgen -340 -1000 2050 400
 "
 }
 {
