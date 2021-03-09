@@ -41,14 +41,14 @@ set_property PACKAGE_PIN U10 [get_ports LTC2195_FR_P_0]
 set_property IOSTANDARD LVDS_25 [get_ports LTC2195_FR_P_0]
 
 # ADC CLK
-set_property PACKAGE_PIN W17 [get_ports FPGA_CLK2_P_0]
+set_property PACKAGE_PIN AA9 [get_ports FPGA_CLK2_P_0]
 set_property IOSTANDARD LVDS_25 [get_ports FPGA_CLK2_P_0]
 
 # DAC CLK
-set_property PACKAGE_PIN AA9 [get_ports FPGA_CLK1_P_0]
+set_property PACKAGE_PIN W17 [get_ports FPGA_CLK1_P_0]
 set_property IOSTANDARD LVDS_25 [get_ports FPGA_CLK1_P_0]
 
-# Si5340 I2C 
+# Si5340 I2C
 set_property PACKAGE_PIN W20 [get_ports IIC_0_0_scl_io]
 set_property PACKAGE_PIN W21 [get_ports IIC_0_0_sda_io]
 
@@ -88,7 +88,7 @@ set_property PACKAGE_PIN AA19 [get_ports SPI_1_0_sck_io]
 set_property PACKAGE_PIN AB22 [get_ports SPI_1_0_io0_io]
 set_property PACKAGE_PIN AA22 [get_ports SPI_1_0_ss_io]
 
-# Si5340 CTRL: LOS, INTR, LOL, nRST, 
+# Si5340 CTRL: LOS, INTR, LOL, nRST,
 set_property PACKAGE_PIN AA21 [get_ports {GPIO_0_0_tri_io[0]}]
 set_property PACKAGE_PIN Y19 [get_ports {GPIO_0_0_tri_io[1]}]
 set_property PACKAGE_PIN AB21 [get_ports {GPIO_0_0_tri_io[2]}]
@@ -111,3 +111,10 @@ set_property IOSTANDARD LVCMOS33 [get_ports {GPIO_0_0_tri_io[9]}]
 #DAC AFE: CH1_nPD, CH2_nPD
 set_property PACKAGE_PIN Y18 [get_ports {GPIO_0_0_tri_io[10]}]
 set_property PACKAGE_PIN AA18 [get_ports {GPIO_0_0_tri_io[11]}]
+
+create_clock -period 10.000 -name CLK_100_0 -waveform {0.000 5.000} [get_ports CLK_100_0]
+create_clock -period 10.000 -name FPGA_CLK1_P_0 -waveform {0.000 5.000} [get_ports FPGA_CLK1_P_0]
+create_clock -period 10.000 -name FPGA_CLK2_P_0 -waveform {0.000 5.000} [get_ports FPGA_CLK2_P_0]
+create_clock -period 5.000 -name LTC2195_DCO_P_0 -waveform {0.000 2.500} [get_ports LTC2195_DCO_P_0]
+create_generated_clock -name AD9117_DCLKIO_0 -source [get_pins main_i/FastServoTop_0/inst/DAC_inst/ODDR_dclkio_inst/C] -divide_by 1 [get_ports AD9117_DCLKIO_0]
+

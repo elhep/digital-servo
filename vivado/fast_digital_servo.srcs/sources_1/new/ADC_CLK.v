@@ -38,19 +38,19 @@ module ADC_CLK(
         .IB(clk_in1_n)
     );
 
-    MMCME2_BASE #(
+    PLLE2_BASE #(
     // VCO freq 1GHz
-        .CLKFBOUT_MULT_F(10.0),    
+        .CLKFBOUT_MULT(10.0),    
         .CLKFBOUT_PHASE(0.0),
         .CLKIN1_PERIOD(10.0),  // 10 ns if 100 MHz
         
-        .CLKOUT0_DIVIDE_F(10.0),    // ADC clk (frequency)
+        .CLKOUT0_DIVIDE(10.0),    // ADC clk (frequency)
         
         .CLKOUT0_PHASE(0.0),
 
         .DIVCLK_DIVIDE(1)   
     )
-    MMCME2_BASE_inst(
+    ADC_PLL(
         .CLKFBOUT (clkfbout_ADC_CLK),
         .CLKOUT0(clk_out1_ADC_CLK),
         

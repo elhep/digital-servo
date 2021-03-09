@@ -50,7 +50,7 @@ input wire reset,
 
         .DIVCLK_DIVIDE(1)   
     )
-    MMCME2_BASE_inst(
+    DAC_MMCME(
         .CLKFBOUT (clkfbout_DAC_CLK),
         .CLKOUT0(clk_out1_DAC_CLK),
         

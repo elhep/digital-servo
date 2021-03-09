@@ -63,7 +63,7 @@ module DCO_CLK(
 
         .DIVCLK_DIVIDE(1)   
     )
-    MMCME2_BASE_inst(
+    DCO_MMCME(
         .CLKFBOUT (clkfbout_DCO_CLK),
         .CLKOUT0(clk_out1_DCO2D_CLK),
         .CLKOUT1(clk_out2_DCO_CLK),

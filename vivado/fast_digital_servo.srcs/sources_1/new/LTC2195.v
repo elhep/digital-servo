@@ -62,6 +62,11 @@ always @(posedge DCO_2D) begin
 end
 
 // // We have multiple bits - step over every bit, instantiating the required elements
+IDELAYCTRL IDELAYCTRL_inst (
+	.RDY(),       // 1-bit output: Ready output
+	.REFCLK(DCO), // 1-bit input: Reference clock input
+	.RST(rst_in)        // 1-bit input: Active high reset input
+);
 
 wire [N_LVDS-1:0] data_in_from_pins; // between the input buffer and the delay
 wire [N_LVDS-1:0] data_in_from_pins_delay; // between the delay and the deserializer
@@ -104,11 +109,6 @@ generate for (lane=0; lane<N_LVDS; lane=lane+1) begin
    );
 	// (* IODELAY_GROUP = <iodelay_group_name> *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
 
-   IDELAYCTRL IDELAYCTRL_inst (
-      .RDY(),       // 1-bit output: Ready output
-      .REFCLK(DCO), // 1-bit input: Reference clock input
-      .RST(rst_in)        // 1-bit input: Active high reset input
-   );
 	ISERDESE2 #(
 		.DATA_RATE("DDR"),           // DDR, SDR
 		.DATA_WIDTH(4),              // Parallel data width (2-8,10,14)
