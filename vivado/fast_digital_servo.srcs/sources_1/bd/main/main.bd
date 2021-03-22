@@ -814,6 +814,12 @@
           "processing_system7_0/SPI_0"
         ]
       },
+      "processing_system7_0_IIC_0": {
+        "interface_ports": [
+          "IIC_0_0",
+          "processing_system7_0/IIC_0"
+        ]
+      },
       "processing_system7_0_SPI_1": {
         "interface_ports": [
           "SPI_1_0",
@@ -830,12 +836,6 @@
         "interface_ports": [
           "DDR",
           "processing_system7_0/DDR"
-        ]
-      },
-      "processing_system7_0_IIC_0": {
-        "interface_ports": [
-          "IIC_0_0",
-          "processing_system7_0/IIC_0"
         ]
       }
     },

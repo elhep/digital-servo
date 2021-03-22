@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.666528",
-   "Default View_TopLeft":"-204,-714",
+   "Default View_TopLeft":"-204,-720",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
@@ -55,12 +55,12 @@ preplace netloc LTC2195_DCO_N_0_1 1 0 2 NJ -510 NJ
 preplace netloc LTC2195_DCO_P_0_1 1 0 2 NJ -530 NJ
 preplace netloc LTC2195_FR_N_0_1 1 0 2 NJ -450 NJ
 preplace netloc LTC2195_FR_P_0_1 1 0 2 NJ -470 NJ
-preplace netloc processing_system7_0_IIC_0 1 1 2 470J -710 1370
 preplace netloc processing_system7_0_FIXED_IO 1 1 2 490J -690 1350
-preplace netloc processing_system7_0_DDR 1 1 2 460 -700 1340
+preplace netloc processing_system7_0_SPI_1 1 1 2 470J -260 NJ
+preplace netloc processing_system7_0_IIC_0 1 1 2 470J -710 1370
 preplace netloc processing_system7_0_GPIO_0 1 1 2 480J -310 1360J
 preplace netloc processing_system7_0_SPI_0 1 1 2 470J -280 NJ
-preplace netloc processing_system7_0_SPI_1 1 1 2 470J -260 NJ
+preplace netloc processing_system7_0_DDR 1 1 2 460 -700 1340
 levelinfo -pg 1 -130 260 1160 1400
 pagesize -pg 1 -db -bbox -sgen -340 -1000 1590 400
 "

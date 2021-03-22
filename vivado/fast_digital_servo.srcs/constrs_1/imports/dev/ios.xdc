@@ -12,7 +12,7 @@ set_property PACKAGE_PIN T18 [get_ports {AD9117_D_0[3]}]
 set_property PACKAGE_PIN R18 [get_ports {AD9117_D_0[2]}]
 set_property PACKAGE_PIN N19 [get_ports {AD9117_D_0[1]}]
 set_property PACKAGE_PIN R19 [get_ports {AD9117_D_0[0]}]
-set_property PACKAGE_PIN N22 [get_ports AD9117_DCLKIO_0]
+set_property PACKAGE_PIN N20 [get_ports AD9117_DCLKIO_0]
 set_property PACKAGE_PIN T19 [get_ports AD9117_RESET_0]
 
 # LTC2195 CH0 Pins
@@ -118,3 +118,5 @@ create_clock -period 10.000 -name FPGA_CLK2_P_0 -waveform {0.000 5.000} [get_por
 create_clock -period 5.000 -name LTC2195_DCO_P_0 -waveform {0.000 2.500} [get_ports LTC2195_DCO_P_0]
 create_generated_clock -name AD9117_DCLKIO_0 -source [get_pins main_i/FastServoTop_0/inst/DAC_inst/ODDR_dclkio_inst/C] -divide_by 1 [get_ports AD9117_DCLKIO_0]
 
+
+set_property IOSTANDARD LVCMOS18 [get_ports AD9117_DCLKIO_0]
