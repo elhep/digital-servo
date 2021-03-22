@@ -5,7 +5,7 @@ Inside this repository you'll find implemented VERY basic support for Fast Servo
 What has been implemented?
   * LTC2195 ADC interface
     * Data from ADC input lanes are deserialized with the use of ISERDESE2 (one for each lane + one for FRAME line)
-    * Each lane is delayed with a IDELAYE2 (so far delay value is fixed to 25)
+    * Each lane is delayed with a IDELAYE2 (so far delay value is fixed to 20)
     * configuration via Zynq's SPI0 from PS [software not implemented]
   * AD9117 DAC interface
     * 16-bit-wide data from ADC is passed to 14-bit-wide DAC output (data inside AD9117 module is bit-shifted by 2 bits)
@@ -21,6 +21,16 @@ What has been implemented?
   * configuration via I2C with Zynq I2C0 [only connections, SW not written] 
   * control signals LOL, nRST, LOS, intr with Zynq's PS GPIO
 * AFE - both ADC and DAC AFE with Zynq's PS GPIO
+
+## Clocking
+  * DCO is fed to MMCME and produces global clocks DCO, inverted DCO (for ISERDESE) and 2 times sloer DCO (freq/2). All data operations are aligned with this clock, since incoming data from LTC2195 is valid on both edges of DCO signal
+  * ADC clock from Si5340 is fed to PLL
+  * DAC clock from Si5340 is fed to another MMCME
+  * CLK_100M from oscillator is fed just to input clock buffer
+
+
+## Pinout MISC
+  * FPGA_CLK1 pins pair inverted
 
 ## Issue?
 
