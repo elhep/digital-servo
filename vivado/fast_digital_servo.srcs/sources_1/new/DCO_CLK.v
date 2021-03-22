@@ -40,7 +40,7 @@ module DCO_CLK(
 
     wire clkfbout_DCO_CLK, clkfbout_buf_DCO_CLK;
 
-    IBUFDS clkin1_ibufgds
+    IBUFGDS clkin1_ibufgds
         (.O  (clk_in1_DCO_CLK),
         .I  (clk_in1_p),
         .IB (clk_in1_n)
@@ -53,8 +53,8 @@ module DCO_CLK(
         .CLKFBOUT_PHASE(0.0),
         .CLKIN1_PERIOD(5.0),  // 5 ns if 200 MHz, 4 ns if 250 MHz
         
-        .CLKOUT0_DIVIDE_F(10.0),    // DCO (frequency)
-        .CLKOUT1_DIVIDE(5.0),       // DCO/2  
+        .CLKOUT0_DIVIDE_F(10.0),    // DCO/2 (frequency)
+        .CLKOUT1_DIVIDE(5.0),       // DCO  
 
         .CLKOUT1_DUTY_CYCLE(0.5),
         
@@ -73,7 +73,8 @@ module DCO_CLK(
         .CLKFBIN(clkfbout_buf_DCO_CLK),
         .CLKIN1(clk_in1_DCO_CLK),
         .LOCKED(locked),
-        .RST(reset)
+        .RST(reset),
+        .PWRDWN(1'b0)
     );
 
 BUFG clkf_buf (
