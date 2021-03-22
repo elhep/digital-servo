@@ -25,7 +25,7 @@ module clk_counter(
     output wire count_done
     );
 
-reg [25:0] counter;
+reg [25:0] counter = 26'b0;
 
 always @(posedge clk_in) begin
         if (counter == 26'b0) 

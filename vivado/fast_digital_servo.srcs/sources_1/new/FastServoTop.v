@@ -68,7 +68,7 @@ module FastServoTop(
         .DCO_2D(dco_2d_clk),
         .CLK_100M(clk_100m)
     );
-    wire signed	[15:0]				ADCraw[0:1];		// out of the LTC2195
+    wire [15:0]				ADCraw[0:1];		// out of the LTC2195
     wire [3:0] s_frame;
 
     LTC2195 ADC_inst(
@@ -87,7 +87,7 @@ module FastServoTop(
         .FR_out(s_frame)
     );
 
-    wire signed [15:0] DACin[0:1];
+    wire [15:0] DACin[0:1];
 
     AD9117 DAC_inst(
         .clk_in(dco_2d_clk),
@@ -99,8 +99,8 @@ module FastServoTop(
         .DCLKIO(AD9117_DCLKIO)
     );
 
-    assign ADCraw[0] = DACin[0];
-    assign ADCraw[1] = DACin[1];
+    assign DACin[0] = ADCraw[0];
+    assign DACin[1] = ADCraw[1];
 
     // counters for ADC and DAC clock so Vivado it won't misoptimise
     // assuming ADC and DAC clk configured to 100 MHz - output will
