@@ -31,6 +31,7 @@ module FastServoTop(
     input wire LTC2195_DCO_N,
 
     input wire CLK_100,         // Oscillator clock 100 MHz
+    input wire AT_EVENT,
 
 	input  wire			 LTC2195_FR_P,
 	input  wire			 LTC2195_FR_N,
@@ -45,11 +46,13 @@ module FastServoTop(
 
     output wire [3:0] FP_LEDS,
     output wire [2:0] LEDS,
-    output wire [1:0] DIO
+    output wire [1:0] DIO,
+    
+    output wire [1:0] ETH_LEDS
 
     );
 
-    wire adc_clk, dac_clk, clk_100m, dco_clk, dcob_clk, dco_2d_clk;
+    wire adc_clk, dac_clk, clk_100m, dco_clk, dcob_clk, dco_2d_clk, dco_2x_clk;
     ClockMGMT clocks (
         .rst_in(rst_in),
         .FPGA_CLK1_P(FPGA_CLK1_P),
@@ -66,6 +69,7 @@ module FastServoTop(
         .DCO(dco_clk),
         .DCOB(dcob_clk),
         .DCO_2D(dco_2d_clk),
+        .DCO_2X(dco_2x_clk),
         .CLK_100M(clk_100m)
     );
     wire [15:0]				ADCraw[0:1];		// out of the LTC2195
@@ -102,6 +106,20 @@ module FastServoTop(
     assign DACin[0] = ADCraw[0];
     assign DACin[1] = ADCraw[1];
 
+//    IIR #(
+//    .ADC_WIDTH(16),
+//    .DATA_WIDTH(25),
+//    .COEFF_WIDTH(18),
+//    .ORDER(3)
+//    ) IIR_inst (
+//        .clk_in(dco_2d_clk),
+//        .clk_in4x(dco_2x_clk),
+//        .rst_in(rst_in),
+//        .i_data(ADCraw[0]),
+//        .i_offset('b0),
+//        .o_data(DACin[0])
+//        );
+
     // counters for ADC and DAC clock so Vivado it won't misoptimise
     // assuming ADC and DAC clk configured to 100 MHz - output will
     // blink with freq of 1 Hz
@@ -123,5 +141,6 @@ module FastServoTop(
     assign FP_LEDS = {4{counter_adc_done}};
     assign LEDS = {3{counter_dac_done}};
     assign DIO = {counter_100m_done, ~counter_100m_done};
+    assign ETH_LEDS = {AT_EVENT, ~AT_EVENT};
 
 endmodule

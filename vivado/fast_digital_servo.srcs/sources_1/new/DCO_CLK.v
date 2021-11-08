@@ -25,6 +25,7 @@ module DCO_CLK(
         output        clk_out1,
         output        clk_out2,
         output        clk_out3,
+        output        clk_out4,
         // Status and control signals
         input         reset,
         output        locked,
@@ -37,6 +38,7 @@ module DCO_CLK(
     wire    clk_out1_DCO2D_CLK;
     wire    clk_out2_DCO_CLK;
     wire    clk_out3_DCOB_CLK;
+    wire    clk_out4_DCO2X_CLK;
 
     wire clkfbout_DCO_CLK, clkfbout_buf_DCO_CLK;
 
@@ -55,11 +57,14 @@ module DCO_CLK(
         
         .CLKOUT0_DIVIDE_F(10.0),    // DCO/2 (frequency)
         .CLKOUT1_DIVIDE(5.0),       // DCO  
+        .CLKOUT2_DIVIDE(2.5),
 
-        .CLKOUT1_DUTY_CYCLE(0.5),
-        
+        .CLKOUT1_DUTY_CYCLE(0.500),
+        .CLKOUT2_DUTY_CYCLE(0.5),
+
         .CLKOUT0_PHASE(0.0),
         .CLKOUT1_PHASE(0.0),
+        .CLKOUT2_PHASE(0.0),
 
         .DIVCLK_DIVIDE(1)   
     )
@@ -68,6 +73,7 @@ module DCO_CLK(
         .CLKOUT0(clk_out1_DCO2D_CLK),
         .CLKOUT1(clk_out2_DCO_CLK),
         .CLKOUT1B(clk_out3_DCOB_CLK),
+        .CLKOUT2(clk_out4_DCO2X_CLK),
         
         // Input clock 
         .CLKFBIN(clkfbout_buf_DCO_CLK),
@@ -95,6 +101,11 @@ BUFG clkout2_buf (
 BUFG clkout3_buf (
     .O(clk_out3),
     .I(clk_out3_DCOB_CLK)
+);
+
+BUFG clkout4_buf (
+    .O(clk_out4),
+    .I(clk_out4_DCO2X_CLK)
 );
 
 endmodule

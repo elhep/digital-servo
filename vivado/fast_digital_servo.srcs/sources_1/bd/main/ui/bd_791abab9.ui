@@ -1,68 +1,115 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.666528",
-   "Default View_TopLeft":"-204,-720",
+   "Default View_ScaleFactor":"0.663934",
+   "Default View_TopLeft":"-330,452",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
-   "PinnedPorts":"",
-   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 TLS
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 3 -x 1400 -y 10 -defaultsOSRD
-preplace port IIC_0_0 -pg 1 -lvl 3 -x 1400 -y -30 -defaultsOSRD
-preplace port FIXED_IO_0 -pg 1 -lvl 3 -x 1400 -y -50 -defaultsOSRD
-preplace port GPIO_0_0 -pg 1 -lvl 3 -x 1400 -y -360 -defaultsOSRD
-preplace port SPI_0_0 -pg 1 -lvl 3 -x 1400 -y -280 -defaultsOSRD
-preplace port SPI_1_0 -pg 1 -lvl 3 -x 1400 -y -260 -defaultsOSRD
-preplace port AD9117_DCLKIO_0 -pg 1 -lvl 3 -x 1400 -y -530 -defaultsOSRD
-preplace port AD9117_RESET_0 -pg 1 -lvl 3 -x 1400 -y -510 -defaultsOSRD
-preplace port CLK_100_0 -pg 1 -lvl 0 -x -130 -y -490 -defaultsOSRD
-preplace port FPGA_CLK1_N_0 -pg 1 -lvl 0 -x -130 -y -590 -defaultsOSRD
-preplace port FPGA_CLK1_P_0 -pg 1 -lvl 0 -x -130 -y -610 -defaultsOSRD
-preplace port FPGA_CLK2_N_0 -pg 1 -lvl 0 -x -130 -y -550 -defaultsOSRD
-preplace port FPGA_CLK2_P_0 -pg 1 -lvl 0 -x -130 -y -570 -defaultsOSRD
-preplace port LTC2195_DCO_N_0 -pg 1 -lvl 0 -x -130 -y -510 -defaultsOSRD
-preplace port LTC2195_DCO_P_0 -pg 1 -lvl 0 -x -130 -y -530 -defaultsOSRD
-preplace port LTC2195_FR_N_0 -pg 1 -lvl 0 -x -130 -y -450 -defaultsOSRD
-preplace port LTC2195_FR_P_0 -pg 1 -lvl 0 -x -130 -y -470 -defaultsOSRD
-preplace portBus AD9117_D_0 -pg 1 -lvl 3 -x 1400 -y -550 -defaultsOSRD
-preplace portBus DIO_0 -pg 1 -lvl 3 -x 1400 -y -450 -defaultsOSRD
-preplace portBus FP_LEDS_0 -pg 1 -lvl 3 -x 1400 -y -490 -defaultsOSRD
-preplace portBus LEDS_0 -pg 1 -lvl 3 -x 1400 -y -470 -defaultsOSRD
-preplace portBus LTC2195_D0_N_0 -pg 1 -lvl 0 -x -130 -y -410 -defaultsOSRD
-preplace portBus LTC2195_D0_P_0 -pg 1 -lvl 0 -x -130 -y -430 -defaultsOSRD
-preplace portBus LTC2195_D1_N_0 -pg 1 -lvl 0 -x -130 -y -370 -defaultsOSRD
-preplace portBus LTC2195_D1_P_0 -pg 1 -lvl 0 -x -130 -y -390 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 260 -y -290 -defaultsOSRD
-preplace inst FastServoTop_0 -pg 1 -lvl 2 -x 1160 -y -500 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 -100 -150 470
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 520 -630n
-preplace netloc FastServoTop_0_AD9117_D 1 2 1 NJ -550
-preplace netloc FastServoTop_0_AD9117_DCLKIO 1 2 1 NJ -530
-preplace netloc FastServoTop_0_AD9117_RESET 1 2 1 NJ -510
-preplace netloc CLK_100_0_1 1 0 2 NJ -490 NJ
-preplace netloc FastServoTop_0_DIO 1 2 1 NJ -450
-preplace netloc FastServoTop_0_FP_LEDS 1 2 1 NJ -490
-preplace netloc FPGA_CLK1_N_0_1 1 0 2 NJ -590 NJ
-preplace netloc FPGA_CLK1_P_0_1 1 0 2 NJ -610 NJ
-preplace netloc FPGA_CLK2_N_0_1 1 0 2 NJ -550 NJ
-preplace netloc FPGA_CLK2_P_0_1 1 0 2 NJ -570 NJ
-preplace netloc FastServoTop_0_LEDS 1 2 1 NJ -470
-preplace netloc LTC2195_D0_N_0_1 1 0 2 -100J -440 510J
-preplace netloc LTC2195_D0_P_0_1 1 0 2 NJ -430 NJ
-preplace netloc LTC2195_D1_N_0_1 1 0 2 -90J -460 500J
-preplace netloc LTC2195_D1_P_0_1 1 0 2 -110J -480 530J
-preplace netloc LTC2195_DCO_N_0_1 1 0 2 NJ -510 NJ
-preplace netloc LTC2195_DCO_P_0_1 1 0 2 NJ -530 NJ
-preplace netloc LTC2195_FR_N_0_1 1 0 2 NJ -450 NJ
-preplace netloc LTC2195_FR_P_0_1 1 0 2 NJ -470 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 1 2 490J -690 1350
-preplace netloc processing_system7_0_SPI_1 1 1 2 470J -260 NJ
-preplace netloc processing_system7_0_IIC_0 1 1 2 470J -710 1370
-preplace netloc processing_system7_0_GPIO_0 1 1 2 480J -310 1360J
-preplace netloc processing_system7_0_SPI_0 1 1 2 470J -280 NJ
-preplace netloc processing_system7_0_DDR 1 1 2 460 -700 1340
-levelinfo -pg 1 -130 260 1160 1400
-pagesize -pg 1 -db -bbox -sgen -340 -1000 1590 400
+preplace port DDR -pg 1 -lvl 4 -x 1160 -y 430 -defaultsOSRD
+preplace port IIC_0_0 -pg 1 -lvl 4 -x 1160 -y 470 -defaultsOSRD
+preplace port FIXED_IO_0 -pg 1 -lvl 4 -x 1160 -y 390 -defaultsOSRD
+preplace port GPIO_0_0 -pg 1 -lvl 4 -x 1160 -y 410 -defaultsOSRD
+preplace port AD9117_DCLKIO_0 -pg 1 -lvl 4 -x 1160 -y 160 -defaultsOSRD
+preplace port AD9117_RESET_0 -pg 1 -lvl 4 -x 1160 -y 180 -defaultsOSRD
+preplace port CLK_100_0 -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace port FPGA_CLK1_N_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port FPGA_CLK1_P_0 -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port FPGA_CLK2_N_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port FPGA_CLK2_P_0 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port LTC2195_DCO_N_0 -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace port LTC2195_DCO_P_0 -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port LTC2195_FR_N_0 -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port LTC2195_FR_P_0 -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace port AT_EVENT_0 -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port dac_sclk -pg 1 -lvl 4 -x 1160 -y 990 -defaultsOSRD
+preplace port dac_ss -pg 1 -lvl 4 -x 1160 -y 970 -defaultsOSRD
+preplace port dac_sdio -pg 1 -lvl 4 -x 1160 -y 1010 -defaultsOSRD
+preplace port adc_ss -pg 1 -lvl 4 -x 1160 -y 630 -defaultsOSRD
+preplace port adc_sclk -pg 1 -lvl 4 -x 1160 -y 650 -defaultsOSRD
+preplace port adc_mosi -pg 1 -lvl 4 -x 1160 -y 670 -defaultsOSRD
+preplace port adc_miso -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
+preplace portBus AD9117_D_0 -pg 1 -lvl 4 -x 1160 -y 140 -defaultsOSRD
+preplace portBus DIO_0 -pg 1 -lvl 4 -x 1160 -y 240 -defaultsOSRD
+preplace portBus FP_LEDS_0 -pg 1 -lvl 4 -x 1160 -y 200 -defaultsOSRD
+preplace portBus LEDS_0 -pg 1 -lvl 4 -x 1160 -y 220 -defaultsOSRD
+preplace portBus LTC2195_D0_N_0 -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
+preplace portBus LTC2195_D0_P_0 -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace portBus LTC2195_D1_N_0 -pg 1 -lvl 0 -x 0 -y 340 -defaultsOSRD
+preplace portBus LTC2195_D1_P_0 -pg 1 -lvl 0 -x 0 -y 320 -defaultsOSRD
+preplace portBus ETH_LEDS_0 -pg 1 -lvl 4 -x 1160 -y 260 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 220 -y 780 -defaultsOSRD
+preplace inst dac_spi_ss -pg 1 -lvl 2 -x 610 -y 1010 -defaultsOSRD
+preplace inst adc_spi_ss -pg 1 -lvl 2 -x 610 -y 730 -defaultsOSRD
+preplace inst FastServoTop_0 -pg 1 -lvl 3 -x 950 -y 200 -defaultsOSRD
+preplace inst spi_buff_wrapper_0 -pg 1 -lvl 3 -x 950 -y 950 -defaultsOSRD
+preplace inst adc_spi_buff_wrapper_0 -pg 1 -lvl 3 -x 950 -y 610 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 20 1210 430
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 480J 70 770
+preplace netloc FastServoTop_0_AD9117_D 1 3 1 NJ 140
+preplace netloc FastServoTop_0_AD9117_DCLKIO 1 3 1 NJ 160
+preplace netloc FastServoTop_0_AD9117_RESET 1 3 1 NJ 180
+preplace netloc CLK_100_0_1 1 0 3 NJ 200 NJ 200 NJ
+preplace netloc FastServoTop_0_DIO 1 3 1 NJ 240
+preplace netloc FastServoTop_0_FP_LEDS 1 3 1 NJ 200
+preplace netloc FPGA_CLK1_N_0_1 1 0 3 NJ 100 NJ 100 NJ
+preplace netloc FPGA_CLK1_P_0_1 1 0 3 NJ 80 NJ 80 NJ
+preplace netloc FPGA_CLK2_N_0_1 1 0 3 NJ 140 NJ 140 NJ
+preplace netloc FPGA_CLK2_P_0_1 1 0 3 NJ 120 NJ 120 NJ
+preplace netloc FastServoTop_0_LEDS 1 3 1 NJ 220
+preplace netloc LTC2195_D0_N_0_1 1 0 3 NJ 300 NJ 300 NJ
+preplace netloc LTC2195_D0_P_0_1 1 0 3 NJ 280 NJ 280 NJ
+preplace netloc LTC2195_D1_N_0_1 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc LTC2195_D1_P_0_1 1 0 3 NJ 320 NJ 320 NJ
+preplace netloc LTC2195_DCO_N_0_1 1 0 3 NJ 180 NJ 180 NJ
+preplace netloc LTC2195_DCO_P_0_1 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc LTC2195_FR_N_0_1 1 0 3 NJ 260 NJ 260 NJ
+preplace netloc LTC2195_FR_P_0_1 1 0 3 NJ 240 NJ 240 NJ
+preplace netloc FastServoTop_0_ETH_LEDS 1 3 1 NJ 260
+preplace netloc AT_EVENT_0_1 1 0 3 NJ 220 NJ 220 NJ
+preplace netloc processing_system7_0_SPI1_SCLK_O 1 1 2 NJ 830 760
+preplace netloc processing_system7_0_SPI1_SCLK_T 1 1 2 NJ 850 750
+preplace netloc spi_buff_wrapper_0_ps_sclk_i 1 1 3 500J 820 NJ 820 1130
+preplace netloc processing_system7_0_SPI1_SS_O 1 1 1 490 990n
+preplace netloc processing_system7_0_SPI1_SS1_O 1 1 1 500 1010n
+preplace netloc processing_system7_0_SPI1_SS2_O 1 1 1 510 1030n
+preplace netloc xlconcat_0_dout 1 2 1 740 1000n
+preplace netloc processing_system7_0_SPI1_SS_T 1 1 2 430J 1090 740
+preplace netloc processing_system7_0_SPI1_MISO_T 1 1 2 510J 930 710
+preplace netloc processing_system7_0_SPI1_MISO_O 1 1 2 500J 920 720
+preplace netloc processing_system7_0_SPI1_MOSI_T 1 1 2 NJ 910 730
+preplace netloc processing_system7_0_SPI1_MOSI_O 1 1 2 NJ 890 740
+preplace netloc spi_buff_wrapper_0_ps_mosi_i 1 1 3 NJ 870 770J 810 1140
+preplace netloc spi_buff_wrapper_0_ps_miso_i 1 1 3 460J 1100 NJ 1100 1140
+preplace netloc spi_buff_wrapper_0_ps_ss_i 1 1 3 420J 1110 NJ 1110 1130
+preplace netloc spi_buff_wrapper_0_o_sclk 1 3 1 NJ 990
+preplace netloc spi_buff_wrapper_0_o_ss 1 3 1 NJ 970
+preplace netloc Net 1 3 1 NJ 1010
+preplace netloc processing_system7_0_SPI0_SS_O 1 1 1 N 710
+preplace netloc processing_system7_0_SPI0_SS1_O 1 1 1 N 730
+preplace netloc processing_system7_0_SPI0_SS2_O 1 1 1 N 750
+preplace netloc adc_spi_ss_dout 1 2 1 720 650n
+preplace netloc adc_spi_buff_wrapper_0_o_ss 1 3 1 NJ 630
+preplace netloc adc_spi_buff_wrapper_0_o_sclk 1 3 1 NJ 650
+preplace netloc adc_spi_buff_wrapper_0_o_mosi 1 3 1 NJ 670
+preplace netloc i_miso_0_1 1 0 3 20J 350 NJ 350 770J
+preplace netloc processing_system7_0_SPI0_SCLK_O 1 1 2 N 530 NJ
+preplace netloc processing_system7_0_SPI0_SCLK_T 1 1 2 N 550 NJ
+preplace netloc processing_system7_0_SPI0_MOSI_O 1 1 2 450 570 NJ
+preplace netloc processing_system7_0_SPI0_MOSI_T 1 1 2 460 590 NJ
+preplace netloc processing_system7_0_SPI0_MISO_O 1 1 2 470 610 NJ
+preplace netloc processing_system7_0_SPI0_MISO_T 1 1 2 500 640 760J
+preplace netloc processing_system7_0_SPI0_SS_T 1 1 2 510 810 740J
+preplace netloc adc_spi_buff_wrapper_0_ps_sclk_i 1 1 3 430 450 NJ 450 1140
+preplace netloc adc_spi_buff_wrapper_0_ps_mosi_i 1 1 3 440 460 NJ 460 1130
+preplace netloc adc_spi_buff_wrapper_0_ps_miso_i 1 1 3 N 630 750J 750 1140
+preplace netloc adc_spi_buff_wrapper_0_ps_ss_i 1 1 3 510J 650 710J 760 1130
+preplace netloc processing_system7_0_DDR 1 1 3 NJ 430 NJ 430 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 420J 400 NJ 400 1140J
+preplace netloc processing_system7_0_GPIO_0 1 1 3 NJ 410 NJ 410 NJ
+preplace netloc processing_system7_0_IIC_0 1 1 3 NJ 470 NJ 470 NJ
+levelinfo -pg 1 0 220 610 950 1160
+pagesize -pg 1 -db -bbox -sgen -210 0 1350 1220
 "
 }
 {
